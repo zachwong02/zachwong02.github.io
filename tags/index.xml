@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on jigsaw</title>
+    <link>https://zachwong02.github.io/tags/</link>
+    <description>Recent content in Tags on jigsaw</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Sep 2023 20:27:31 +0800</lastBuildDate><atom:link href="https://zachwong02.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blue Teaming</title>
+      <link>https://zachwong02.github.io/tags/blue-teaming/</link>
+      <pubDate>Sun, 03 Sep 2023 20:27:31 +0800</pubDate>
+      
+      <guid>https://zachwong02.github.io/tags/blue-teaming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Digital Forensics</title>
+      <link>https://zachwong02.github.io/tags/digital-forensics/</link>
+      <pubDate>Sun, 03 Sep 2023 20:27:31 +0800</pubDate>
+      
+      <guid>https://zachwong02.github.io/tags/digital-forensics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lab Creation</title>
+      <link>https://zachwong02.github.io/tags/lab-creation/</link>
+      <pubDate>Sun, 03 Sep 2023 20:27:31 +0800</pubDate>
+      
+      <guid>https://zachwong02.github.io/tags/lab-creation/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
