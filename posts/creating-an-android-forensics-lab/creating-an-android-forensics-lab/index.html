@@ -170,20 +170,20 @@
 <ol>
 <li>You can use <code>git</code> to clone the repository</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/newbit1/rootAVD.git
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/newbit1/rootAVD.git
 </code></pre></div><p><img src="/images/creating-an-android-forensics-lab/9-android-forensics-environment.png" alt="Cloning the repo"></p>
 <br />
 
 <ol start="2">
 <li>Before we root the device, let&rsquo;s export some variables! (This is <strong>very</strong> important generally and for scripting purposes)</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># For MacOS</span>
-export PATH<span style="color:#f92672">=</span>$PATH:~/Library/Android/sdk/platform-tools/
-export EMULATOR<span style="color:#f92672">=</span>~/Library/Android/sdk/emulator/
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># For MacOS</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:~/Library/Android/sdk/platform-tools/
+<span class="nb">export</span> <span class="nv">EMULATOR</span><span class="o">=</span>~/Library/Android/sdk/emulator/
 
-<span style="color:#75715e"># For Linux</span>
-export PATH<span style="color:#f92672">=</span>$PATH:/home/$USER/Android/Sdk/platform-tools/
-export EMULATOR<span style="color:#f92672">=</span>/home/$USER/Android/Sdk/emulator/ 
+<span class="c1"># For Linux</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/home/<span class="nv">$USER</span>/Android/Sdk/platform-tools/
+<span class="nb">export</span> <span class="nv">EMULATOR</span><span class="o">=</span>/home/<span class="nv">$USER</span>/Android/Sdk/emulator/ 
 </code></pre></div><br />
 
 <ol start="3">
@@ -263,17 +263,17 @@ export EMULATOR<span style="color:#f92672">=</span>/home/$USER/Android/Sdk/emula
 </blockquote>
 <br />
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">send_keystrokes<span style="color:#f92672">(){</span>
-  adb -s $emulator shell input keyevent $1
-<span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">send_keystrokes<span class="o">(){</span>
+  adb -s <span class="nv">$emulator</span> shell input keyevent <span class="nv">$1</span>
+<span class="o">}</span>
 
-adb -s $emulator shell su &amp;	
-send_keystrokes <span style="color:#ae81ff">22</span> 
-sleep <span style="color:#ae81ff">1</span> 
-send_keystrokes <span style="color:#ae81ff">22</span> 
-sleep <span style="color:#ae81ff">1</span>
-send_keystrokes <span style="color:#ae81ff">22</span> 
-send_keystrokes <span style="color:#ae81ff">66</span> 
+adb -s <span class="nv">$emulator</span> shell su <span class="p">&amp;</span>	
+send_keystrokes <span class="m">22</span> 
+sleep <span class="m">1</span> 
+send_keystrokes <span class="m">22</span> 
+sleep <span class="m">1</span>
+send_keystrokes <span class="m">22</span> 
+send_keystrokes <span class="m">66</span> 
 </code></pre></div><ol>
 <li>
 <p>We will invoke the <code>su</code> command by using <code>adb</code> with the switch <code>s</code> to identify the emulator being used.</p>
@@ -310,9 +310,9 @@ send_keystrokes <span style="color:#ae81ff">66</span>
 <br />
 </p>
 <h3 id="connecting-to-the-android-device">Connecting to the Android Device</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">exec 3&lt;&gt;/dev/tcp/$host/$port
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">exec</span> 3&lt;&gt;/dev/tcp/<span class="nv">$host</span>/<span class="nv">$port</span>
 
-echo <span style="color:#e6db74">&#34;auth &lt;AUTH CODE&gt;&#34;</span> &gt;&amp;<span style="color:#ae81ff">3</span>
+<span class="nb">echo</span> <span class="s2">&#34;auth &lt;AUTH CODE&gt;&#34;</span> &gt;<span class="p">&amp;</span><span class="m">3</span>
 </code></pre></div><ol>
 <li>This command will simply make a connection with our Android Device using the file descriptor <code>3</code> allowing us to interact with our Android device through a shell different from the adb shell with extra commands.</li>
 </ol>
@@ -328,17 +328,17 @@ echo <span style="color:#e6db74">&#34;auth &lt;AUTH CODE&gt;&#34;</span> &gt;&am
 <ol start="3">
 <li>We can do that by making a connection to give us a prompt of where to get our authentication token</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-<span style="color:#75715e"># port 5554 is the default port but check your emulator name</span>
-<span style="color:#75715e"># </span>
-<span style="color:#75715e"># jigsaw@jigsaw:-$ adb devices</span>
-<span style="color:#75715e"># </span>
-<span style="color:#75715e"># List of devices attached</span>
-<span style="color:#75715e"># emulator-5554 device</span>
-<span style="color:#75715e">#</span>
-<span style="color:#75715e"># The number at the end is usually the port number you want to connect to</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">
+<span class="c1"># port 5554 is the default port but check your emulator name</span>
+<span class="c1"># </span>
+<span class="c1"># jigsaw@jigsaw:-$ adb devices</span>
+<span class="c1"># </span>
+<span class="c1"># List of devices attached</span>
+<span class="c1"># emulator-5554 device</span>
+<span class="c1">#</span>
+<span class="c1"># The number at the end is usually the port number you want to connect to</span>
 
-jigsaw@jigsaw:-$ nc 127.0.0.1 <span style="color:#ae81ff">5554</span> 
+jigsaw@jigsaw:-$ nc 127.0.0.1 <span class="m">5554</span> 
 </code></pre></div><br />
 
 <p><img src="/images/creating-an-android-forensics-lab/22-android-forensics-environment.png" alt="Finding Auth Token"></p>
@@ -352,16 +352,16 @@ jigsaw@jigsaw:-$ nc 127.0.0.1 <span style="color:#ae81ff">5554</span>
 <blockquote>
 <p><em>Now, just now we were able to <code>nc</code> into our Android device, why didn&rsquo;t we just execute commands there? Well, we did it this way so that we can secure a connection in our script and pass commands through the script instead of typing it one by one.</em></p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;auth &lt;AUTH TOKEN&gt;&#34;</span> &gt;&amp;<span style="color:#ae81ff">3</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">&#34;auth &lt;AUTH TOKEN&gt;&#34;</span> &gt;<span class="p">&amp;</span><span class="m">3</span>
 </code></pre></div><p><br />
 
 <br />
 </p>
 <h3 id="setting-the-time">Setting the Time</h3>
 <p>With the connections established, we can dive into creating our evidence! However, for BAT CTF 2023 we needed the evidence to be at a specific time and I found a way to do that! (Be sure to change the time according to when you want the evidence to be created)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">set_time<span style="color:#f92672">(){</span>
-  adb -s $emulator shell <span style="color:#e6db74">&#34;su -c &#39;toybox date </span>$1<span style="color:#e6db74">&#39;&#34;</span>
-<span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">set_time<span class="o">(){</span>
+  adb -s <span class="nv">$emulator</span> shell <span class="s2">&#34;su -c &#39;toybox date </span><span class="nv">$1</span><span class="s2">&#39;&#34;</span>
+<span class="o">}</span>
 </code></pre></div><ol>
 <li>
 <p>The function above will identify the emulator used with the <code>s</code> switch.</p>
@@ -382,9 +382,9 @@ jigsaw@jigsaw:-$ nc 127.0.0.1 <span style="color:#ae81ff">5554</span>
 </p>
 <h3 id="installing-applications">Installing Applications</h3>
 <p>If you were paying attention to the logs when we were escalating our privileges, you would have realised that it installed <code>Magisk</code>. How? Let me show you.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># &lt;APP&gt; is in the form of an APK file</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># &lt;APP&gt; is in the form of an APK file</span>
 
-adb -s $emulator install &lt;APP&gt;
+adb -s <span class="nv">$emulator</span> install &lt;APP&gt;
 </code></pre></div><blockquote>
 <p><em>With the install argument, we can install any app we want!</em></p>
 </blockquote>
@@ -396,7 +396,7 @@ adb -s $emulator install &lt;APP&gt;
 <blockquote>
 <p><em>Yea just a warning, do this in another terminal with the same <code>export</code>s we did previously. The phone will then launch after this</em></p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$EMULATOR/emulator -avd Pixel_2_API_29 -phone-number <span style="color:#ae81ff">601163282118</span> -read-only
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">$EMULATOR</span>/emulator -avd Pixel_2_API_29 -phone-number <span class="m">601163282118</span> -read-only
 </code></pre></div><ol>
 <li>
 <p>The <code>emulator</code> binary will use the emulated device we have with the <code>avd</code> switch</p>
@@ -419,40 +419,40 @@ adb -s $emulator install &lt;APP&gt;
 <ol>
 <li>First, you know those irritating text suggestions that pop up when we text? Let&rsquo;s remove that.</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Referring to the send_keystrokes() function</span>
-<span style="color:#75715e"># Update: After debugging this particular script only works if you rooted the device</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Referring to the send_keystrokes() function</span>
+<span class="c1"># Update: After debugging this particular script only works if you rooted the device</span>
 
-adb -s $emulator shell am start -n com.google.android.apps.messaging/.ui.ConversationListActivity
+adb -s <span class="nv">$emulator</span> shell am start -n com.google.android.apps.messaging/.ui.ConversationListActivity
 
-send_keystrokes <span style="color:#ae81ff">61</span> 
-send_keystrokes <span style="color:#ae81ff">61</span> 
-send_keystrokes <span style="color:#ae81ff">61</span> 
-send_keystrokes <span style="color:#ae81ff">61</span> 
-send_keystrokes <span style="color:#ae81ff">61</span> 
-send_keystrokes <span style="color:#ae81ff">61</span> 
-send_keystrokes <span style="color:#ae81ff">61</span>  
-send_keystrokes <span style="color:#ae81ff">66</span>
+send_keystrokes <span class="m">61</span> 
+send_keystrokes <span class="m">61</span> 
+send_keystrokes <span class="m">61</span> 
+send_keystrokes <span class="m">61</span> 
+send_keystrokes <span class="m">61</span> 
+send_keystrokes <span class="m">61</span> 
+send_keystrokes <span class="m">61</span>  
+send_keystrokes <span class="m">66</span>
 
-send_keystrokes <span style="color:#ae81ff">20</span>
-send_keystrokes <span style="color:#ae81ff">20</span>
-send_keystrokes <span style="color:#ae81ff">20</span>
-send_keystrokes <span style="color:#ae81ff">20</span>
-send_keystrokes <span style="color:#ae81ff">66</span>
+send_keystrokes <span class="m">20</span>
+send_keystrokes <span class="m">20</span>
+send_keystrokes <span class="m">20</span>
+send_keystrokes <span class="m">20</span>
+send_keystrokes <span class="m">66</span>
 
-send_keystrokes <span style="color:#ae81ff">20</span>
-send_keystrokes <span style="color:#ae81ff">20</span>
-send_keystrokes <span style="color:#ae81ff">20</span>
-send_keystrokes <span style="color:#ae81ff">20</span>
-send_keystrokes <span style="color:#ae81ff">66</span>
+send_keystrokes <span class="m">20</span>
+send_keystrokes <span class="m">20</span>
+send_keystrokes <span class="m">20</span>
+send_keystrokes <span class="m">20</span>
+send_keystrokes <span class="m">66</span>
 
 
-send_keystrokes <span style="color:#ae81ff">66</span>
-send_keystrokes <span style="color:#ae81ff">20</span>
-send_keystrokes <span style="color:#ae81ff">20</span>
-send_keystrokes <span style="color:#ae81ff">66</span>
-send_keystrokes <span style="color:#ae81ff">20</span>
-send_keystrokes <span style="color:#ae81ff">20</span>
-send_keystrokes <span style="color:#ae81ff">66</span>
+send_keystrokes <span class="m">66</span>
+send_keystrokes <span class="m">20</span>
+send_keystrokes <span class="m">20</span>
+send_keystrokes <span class="m">66</span>
+send_keystrokes <span class="m">20</span>
+send_keystrokes <span class="m">20</span>
+send_keystrokes <span class="m">66</span>
 
 </code></pre></div><ol>
 <li>Through <code>adb</code>, we will start a <code>shell</code> and <code>am</code> or the Activity Manager we will <code>start</code> the Messaging application</li>
@@ -468,13 +468,13 @@ send_keystrokes <span style="color:#ae81ff">66</span>
 <p>Now let&rsquo;s send the messages.</p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">send_message<span style="color:#f92672">(){</span>
-      adb -s $emulator shell am start -a android.intent.action.SENDTO -d sms:$1 --es sms_body <span style="color:#ae81ff">\&#34;</span>$2<span style="color:#ae81ff">\&#34;</span>
-      sleep <span style="color:#ae81ff">1</span>
-      adb -s $emulator shell input keyevent <span style="color:#ae81ff">22</span>
-      sleep <span style="color:#ae81ff">1</span>
-      adb -s $emulator shell input keyevent <span style="color:#ae81ff">66</span>
-<span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">send_message<span class="o">(){</span>
+      adb -s <span class="nv">$emulator</span> shell am start -a android.intent.action.SENDTO -d sms:<span class="nv">$1</span> --es sms_body <span class="se">\&#34;</span><span class="nv">$2</span><span class="se">\&#34;</span>
+      sleep <span class="m">1</span>
+      adb -s <span class="nv">$emulator</span> shell input keyevent <span class="m">22</span>
+      sleep <span class="m">1</span>
+      adb -s <span class="nv">$emulator</span> shell input keyevent <span class="m">66</span>
+<span class="o">}</span>
 </code></pre></div><blockquote>
 <p><em>I&rsquo;ll be honest, I don&rsquo;t really know what the <code>-d</code> and the <code>-es</code> switch does but I do know it builds out the message we&rsquo;re going to send (so it&rsquo;s like sending an email through <code>telnet</code>).</em></p>
 </blockquote>
@@ -497,9 +497,9 @@ send_keystrokes <span style="color:#ae81ff">66</span>
 <br />
 
 <h3 id="receiving-messages">Receiving Messages</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">receive_message<span style="color:#f92672">(){</span>
-  echo <span style="color:#e6db74">&#34;sms send </span>$1<span style="color:#e6db74"> </span>$2<span style="color:#e6db74">&#34;</span> &gt;&amp;<span style="color:#ae81ff">3</span>
-<span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">receive_message<span class="o">(){</span>
+  <span class="nb">echo</span> <span class="s2">&#34;sms send </span><span class="nv">$1</span><span class="s2"> </span><span class="nv">$2</span><span class="s2">&#34;</span> &gt;<span class="p">&amp;</span><span class="m">3</span>
+<span class="o">}</span>
 </code></pre></div><blockquote>
 <p><em>Don&rsquo;t worry, the part to receive messages is much more simple (calm down XD)</em></p>
 </blockquote>
@@ -516,11 +516,11 @@ send_keystrokes <span style="color:#ae81ff">66</span>
 <br />
 
 <h3 id="sending-calls">Sending Calls</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">make_call<span style="color:#f92672">(){</span>
-  adb -s $emulator shell am start -a android.intent.action.CALL -d tel:$1
-  sleep <span style="color:#ae81ff">10</span>
-  adb -s $emulator shell input keyevent <span style="color:#ae81ff">6</span>
-<span style="color:#f92672">}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">make_call<span class="o">(){</span>
+  adb -s <span class="nv">$emulator</span> shell am start -a android.intent.action.CALL -d tel:<span class="nv">$1</span>
+  sleep <span class="m">10</span>
+  adb -s <span class="nv">$emulator</span> shell input keyevent <span class="m">6</span>
+<span class="o">}</span>
 </code></pre></div><br />
 
 <ol>
@@ -540,10 +540,10 @@ send_keystrokes <span style="color:#ae81ff">66</span>
 <br />
 
 <h3 id="receiving-calls">Receiving Calls</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  sleep <span style="color:#ae81ff">5</span>
-  echo <span style="color:#e6db74">&#34;gsm call </span>$1<span style="color:#e6db74">&#34;</span> &gt;&amp;<span style="color:#ae81ff">3</span>
-  sleep <span style="color:#ae81ff">10</span>
-  echo <span style="color:#e6db74">&#34;gsm cancel </span>$1<span style="color:#e6db74">&#34;</span> &gt;&amp;<span style="color:#ae81ff">3</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">  sleep <span class="m">5</span>
+  <span class="nb">echo</span> <span class="s2">&#34;gsm call </span><span class="nv">$1</span><span class="s2">&#34;</span> &gt;<span class="p">&amp;</span><span class="m">3</span>
+  sleep <span class="m">10</span>
+  <span class="nb">echo</span> <span class="s2">&#34;gsm cancel </span><span class="nv">$1</span><span class="s2">&#34;</span> &gt;<span class="p">&amp;</span><span class="m">3</span>
 </code></pre></div><br />
 
 <ol>
@@ -565,32 +565,32 @@ send_keystrokes <span style="color:#ae81ff">66</span>
 <br />
 </p>
 <h3 id="transferring-files">Transferring Files</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">adb -s $emulator push $1 &lt;LOCATION&gt;
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">adb -s <span class="nv">$emulator</span> push <span class="nv">$1</span> &lt;LOCATION&gt;
 </code></pre></div><ol>
 <li>Through <code>adb</code> again (gotta love that word lol), we&rsquo;ll <code>push</code> the file that we want as the argument followed by the location we want the file to end up in the Android device.</li>
 </ol>
 <br />
 
 <h3 id="extracting-evidence">Extracting Evidence</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Disable line buffering to read input immediately</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Disable line buffering to read input immediately</span>
   stty -echo
   stty cbreak
   
-  <span style="color:#75715e"># Read a single character from the user</span>
-  read -n <span style="color:#ae81ff">1</span> key
+  <span class="c1"># Read a single character from the user</span>
+  <span class="nb">read</span> -n <span class="m">1</span> key
   
-  <span style="color:#75715e"># Enable line buffering and echoing</span>
-  stty echo
+  <span class="c1"># Enable line buffering and echoing</span>
+  stty <span class="nb">echo</span>
   stty -cbreak
   
-  <span style="color:#75715e"># Perform an action based on the input received</span>
-  echo  <span style="color:#75715e"># Move to a new line</span>
+  <span class="c1"># Perform an action based on the input received</span>
+  <span class="nb">echo</span>  <span class="c1"># Move to a new line</span>
 </code></pre></div><ol>
 <li>So before we actually extract the evidence out of the Android device, let&rsquo;s pause the script so that if we have anything we want to do manually we have to do.</li>
 </ol>
 <br />
 
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">adb -s $emulator shell <span style="color:#e6db74">&#34;su -c &#39;tar --exclude=android_image.tar.gz -cvzf /sdcard/Download/android_image.tar.gz /data&#39;&#34;</span> 
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">adb -s <span class="nv">$emulator</span> shell <span class="s2">&#34;su -c &#39;tar --exclude=android_image.tar.gz -cvzf /sdcard/Download/android_image.tar.gz /data&#39;&#34;</span> 
 adb pull /sdcard/Download/android_image.tar.gz
 </code></pre></div><ol start="2">
 <li>
