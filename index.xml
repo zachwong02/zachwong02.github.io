@@ -18,10 +18,10 @@
     
     <item>
       <title>Creating an Android Forensics Lab</title>
-      <link>https://zachwong02.github.io/posts/creating-an-android-forensics-lab/creating-an-android-forensics-lab/</link>
+      <link>https://zachwong02.github.io/posts/creating-an-android-forensics-lab/</link>
       <pubDate>Sun, 03 Sep 2023 20:27:31 +0800</pubDate>
       
-      <guid>https://zachwong02.github.io/posts/creating-an-android-forensics-lab/creating-an-android-forensics-lab/</guid>
+      <guid>https://zachwong02.github.io/posts/creating-an-android-forensics-lab/</guid>
       <description>Introduction Before I start this tutorial/blog/walkthrough on how to build your own Android environment for digital forensics purposes, I have to give some context on how I started this amateur adventure.
 First of all, I am a challenge creator for my university&amp;rsquo;s cybersecurity committee and there was a CTF competition held there on the 2nd of September 2023. So, I took it upon myself to make something unique for the participants and myself&amp;hellip; And oh boy, was it unique and difficult to do for someone like me.</description>
     </item>
