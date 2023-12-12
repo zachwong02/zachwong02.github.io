@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>jigsaw</title>
+    <title>Zach&#39;s Blog</title>
     <link>https://zachwong02.github.io/</link>
-    <description>Recent content on jigsaw</description>
+    <description>Recent content on Zach&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 03 Sep 2023 20:27:31 +0800</lastBuildDate><atom:link href="https://zachwong02.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Dec 2023 21:45:00 +0800</lastBuildDate><atom:link href="https://zachwong02.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating My First AD Forensics Challenge</title>
+      <link>https://zachwong02.github.io/post/creating-my-first-ad-forensics-challenge/creating-my-first-ad-forensics-challenge/</link>
+      <pubDate>Tue, 12 Dec 2023 21:45:00 +0800</pubDate>
+      
+      <guid>https://zachwong02.github.io/post/creating-my-first-ad-forensics-challenge/creating-my-first-ad-forensics-challenge/</guid>
+      <description>Introduction So Active Directory, we all heard of it, seen it, did a penetration test on it before, but have you ever done digital forensics on it? Well, I have not, so let’s create a challenge for my university’s ASEAN Battle of Hackers 2023! It took one week to setup the environment and test it but no one solved it, so let’s make a blog post and show you how to make the environment!</description>
+    </item>
+    
     <item>
       <title>About</title>
       <link>https://zachwong02.github.io/about/</link>
@@ -18,21 +26,12 @@
     
     <item>
       <title>Creating an Android Forensics Lab</title>
-      <link>https://zachwong02.github.io/posts/creating-an-android-forensics-lab/</link>
+      <link>https://zachwong02.github.io/post/creating-an-android-forensics-lab/creating-an-android-forensics-lab/</link>
       <pubDate>Sun, 03 Sep 2023 20:27:31 +0800</pubDate>
       
-      <guid>https://zachwong02.github.io/posts/creating-an-android-forensics-lab/</guid>
+      <guid>https://zachwong02.github.io/post/creating-an-android-forensics-lab/creating-an-android-forensics-lab/</guid>
       <description>Introduction Before I start this tutorial/blog/walkthrough on how to build your own Android environment for digital forensics purposes, I have to give some context on how I started this amateur adventure.
 First of all, I am a challenge creator for my university&amp;rsquo;s cybersecurity committee and there was a CTF competition held there on the 2nd of September 2023. So, I took it upon myself to make something unique for the participants and myself&amp;hellip; And oh boy, was it unique and difficult to do for someone like me.</description>
-    </item>
-    
-    <item>
-      <title>get in touch</title>
-      <link>https://zachwong02.github.io/contact/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://zachwong02.github.io/contact/</guid>
-      <description></description>
     </item>
     
   </channel>
