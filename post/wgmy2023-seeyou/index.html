@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Wargames 2023 Writeup [SeeYou] // Zach&#39;s Blog</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Zach Wong" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.3efbf79cef3011b321e49237647ac4b275d5730c974b903a9f2a87c946d8f071.css" />
+    
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Wargames 2023 Writeup [SeeYou]"/>
+<meta name="twitter:description" content="So another writeup for another Forensics challenge for Wargames 2023! I ended the year off with a PTSD challenge as usual with any CTF I had. This time it was a challenge I was very familiar with after seeing this type of challenge in PicoCTF but I was concentrating on the wrong things. With that said, let’s get into the writeup!
+So, we can see here that a file is provided to us and that the description of the challenge mentioned that data has been exfiltrated through the network internally."/>
+
+    <meta property="og:title" content="Wargames 2023 Writeup [SeeYou]" />
+<meta property="og:description" content="So another writeup for another Forensics challenge for Wargames 2023! I ended the year off with a PTSD challenge as usual with any CTF I had. This time it was a challenge I was very familiar with after seeing this type of challenge in PicoCTF but I was concentrating on the wrong things. With that said, let’s get into the writeup!
+So, we can see here that a file is provided to us and that the description of the challenge mentioned that data has been exfiltrated through the network internally." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zachwong02.github.io/post/wgmy2023-seeyou/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-12-17T03:27:01+08:00" />
+<meta property="article:modified_time" content="2023-12-17T03:27:01+08:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://zachwong02.github.io"><img class="app-header-avatar" src="/avatar.jpg" alt="Zach Wong" /></a>
+      <span class="app-header-title">Zach&#39;s Blog</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">Home</a>
+             | 
+          
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+             | 
+          
+          <a class="app-header-menu-item" href="/about/">About</a>
+      </nav>
+      <p>i&#39;m zach and I build labs</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/zachwong02" target="_blank" rel="noreferrer noopener me">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+          <a href="https://www.linkedin.com/in/zach-wong-zhi-zhen-a39724173" target="_blank" rel="noreferrer noopener me">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+  <title>Linkedin</title>
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Wargames 2023 Writeup [SeeYou]</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Dec 17, 2023
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          3 min read
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://zachwong02.github.io/tags/writeup/">Writeup</a>
+              <a class="tag" href="https://zachwong02.github.io/tags/digital-forensics/">Digital-Forensics</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <p><img src="/images/wgmy2023-seeyou/wgmy2023-seeyou-0.png" alt="uwu"></p>
+<p>So another writeup for another Forensics challenge for Wargames 2023! I ended the year off with a PTSD challenge as usual with any CTF I had. This time it was a challenge I was very familiar with after seeing this type of challenge in PicoCTF but I was concentrating on the wrong things. With that said, let’s get into the writeup!</p>
+<br>
+
+<p><img src="/images/wgmy2023-seeyou/wgmy2023-seeyou-1.png" alt="challenge"></p>
+<p>So, we can see here that a file is provided to us and that the description of the challenge mentioned that data has been exfiltrated through the network internally.</p>
+<br>
+
+<p><img src="/images/wgmy2023-seeyou/wgmy2023-seeyou-2.png" alt="wireshark-wew"></p>
+<p>Extracting the zip file gives us a <code>pcapng</code> file which when opened, revealed a <strong><strong><strong><strong><strong>bunch</strong></strong></strong></strong></strong> of packets. However, sticking to the description of the challenge, I started looking for IP addresses.</p>
+<br>
+
+<p><img src="/images/wgmy2023-seeyou/wgmy2023-seeyou-3.png" alt="sus-ports"></p>
+<p>I managed to stumbled on this, connections from a machine on the same port to different ports on a different machine were being performed.</p>
+<br>
+
+<p><img src="/images/wgmy2023-seeyou/wgmy2023-seeyou-4.png" alt="sans-whitepaper"></p>
+<p>Immediately, I started Googling for TTPs about this kind of exfiltration and I came up with <a href="https://www.sans.org/white-papers/37307/">this</a> whitepaper from SANS.</p>
+<blockquote>
+<p><em>By the way, I was so deep into this whitepaper that I started reading the source code of the tool.</em></p>
+</blockquote>
+<br>
+
+<p><img src="/images/wgmy2023-seeyou/wgmy2023-seeyou-5.png" alt="oh-no-data"></p>
+<blockquote>
+<p><em>Now, starting from here, my downfall begins…</em></p>
+</blockquote>
+<p>From previous packet analysis challenge, and as a habit I check for data within streams and coincidentally there was data within the packets. I started writing scripts to extract all the data from the packets that were going to their respective ports, arranging them from <code>30000</code> to <code>30255</code> and decoding them using <code>base64</code>, <code>base62</code> and <code>base32</code>.</p>
+<p>When that didn’t work, I tried arranging them based on timestamps, which didn’t make sense because Wireshark does that by default. Basically, I was in a rabbit hole.</p>
+<br>
+
+<p><img src="/images/wgmy2023-seeyou/wgmy2023-seeyou-6.png" alt="tshark-baby"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tshark -r artifact.pcapng -Y <span style="color:#e6db74">&#34;udp.srcport == 38884&#34;</span> -T fields -e udp.dstport &gt; ports.txt
+</code></pre></div><p>After the CTF ended, I discovered I was suppose to look at the ports! So, I made a <code>tshark</code> query to do just that and output it to a file.</p>
+<br>
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># Check if a file name is provided</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$#<span style="color:#e6db74">&#34;</span> -ne <span style="color:#ae81ff">1</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+    echo <span style="color:#e6db74">&#34;Usage: </span>$0<span style="color:#e6db74"> filename&#34;</span>
+    exit <span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">fi</span>
+
+<span style="color:#75715e"># Process each line of the file</span>
+<span style="color:#66d9ef">while</span> IFS<span style="color:#f92672">=</span> read -r line; <span style="color:#66d9ef">do</span>
+    echo <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$((</span>line <span style="color:#f92672">-</span> <span style="color:#ae81ff">30000</span><span style="color:#66d9ef">))</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">done</span> &lt; <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</code></pre></div><p>Furthermore, since I was concentrating on the ports, I needed to minus the front part of the ports which was an offset of <code>30000</code>. So, again… I wrote a bash script to do just that.</p>
+<br>
+
+<p><img src="/images/wgmy2023-seeyou/wgmy2023-seeyou-7.png" alt="encoded-text-wew"></p>
+<p>And the result was this blob.</p>
+<br>
+
+<p><img src="/images/wgmy2023-seeyou/wgmy2023-seeyou-8.png" alt="decoded-text-wew"></p>
+<p>As I did this kind of challenge before on PicoCTF, I knew the values were in decimal. So throwing it into CyberChef and placing the recipes <code>From Decimal</code> and <code>Render Image</code> gives us the flag!</p>
+<br>
+
+<p><img src="/images/wgmy2023-seeyou/wgmy2023-seeyou-9.png" alt="flag"></p>
+<blockquote>
+<p><em>A place to scream: AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH</em></p>
+</blockquote>
+<br>
+
+<p>Anyways… here’s the flag:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">wgmy{c0e22d2434fa188003be61e9fe404ea6}
+</code></pre></div>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
