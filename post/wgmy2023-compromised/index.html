@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Wargames 2023 Writeup [Compromised] // Zach&#39;s Blog</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Zach Wong" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.3efbf79cef3011b321e49237647ac4b275d5730c974b903a9f2a87c946d8f071.css" />
+    
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Wargames 2023 Writeup [Compromised]"/>
+<meta name="twitter:description" content="So I participated in a CTF alone??? Yes I did! Ending 2023 off, I participated in Wargames 2023 in the student category! And oh boy for this writeup it was the King of Forensics vs the God of Forensics. However, I did learn something new today from on of the God of Forensics. With that said, let’s get into the writeup!
+The challenge was called “Compromised” and it provided a file called evidence."/>
+
+    <meta property="og:title" content="Wargames 2023 Writeup [Compromised]" />
+<meta property="og:description" content="So I participated in a CTF alone??? Yes I did! Ending 2023 off, I participated in Wargames 2023 in the student category! And oh boy for this writeup it was the King of Forensics vs the God of Forensics. However, I did learn something new today from on of the God of Forensics. With that said, let’s get into the writeup!
+The challenge was called “Compromised” and it provided a file called evidence." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zachwong02.github.io/post/wgmy2023-compromised/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-12-17T02:22:12+08:00" />
+<meta property="article:modified_time" content="2023-12-17T02:22:12+08:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://zachwong02.github.io"><img class="app-header-avatar" src="/avatar.jpg" alt="Zach Wong" /></a>
+      <span class="app-header-title">Zach&#39;s Blog</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">Home</a>
+             | 
+          
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+             | 
+          
+          <a class="app-header-menu-item" href="/about/">About</a>
+      </nav>
+      <p>i&#39;m zach and I build labs</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/zachwong02" target="_blank" rel="noreferrer noopener me">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+          <a href="https://www.linkedin.com/in/zach-wong-zhi-zhen-a39724173" target="_blank" rel="noreferrer noopener me">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+  <title>Linkedin</title>
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Wargames 2023 Writeup [Compromised]</h1>
+      <div class="post-meta">
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Dec 17, 2023
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          3 min read
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
+</svg>
+              <a class="tag" href="https://zachwong02.github.io/tags/writeup/">Writeup</a>
+              <a class="tag" href="https://zachwong02.github.io/tags/digital-forensics/">Digital-Forensics</a>
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <p><img src="/images/wgmy2023-compromised/wgmy2023-compromised-0.png" alt="uwu"></p>
+<p>So I participated in a CTF alone??? Yes I did! Ending 2023 off, I participated in Wargames 2023 in the student category! And oh boy for this writeup it was the King of Forensics vs the God of Forensics. However, I did learn something new today from on of the God of Forensics. With that said, let’s get into the writeup!</p>
+<br>
+
+<p><img src="/images/wgmy2023-compromised/wgmy2023-compromised-1.png" alt="challenge"></p>
+<p>The challenge was called “Compromised” and it provided a file called <code>evidence.zip</code></p>
+<br>
+
+<p><img src="/images/wgmy2023-compromised/wgmy2023-compromised-2.png" alt="directory-listing"></p>
+<p>Unzipping the file, it contains a service account’s file system. However, all that remains is <strong>ALOT</strong> of <code>lnk</code> and <code>ini</code> files which are useless.</p>
+<br>
+
+<p><img src="/images/wgmy2023-compromised/wgmy2023-compromised-3.png" alt="flag.png"></p>
+<p>One of the noteworthy files in the Desktop folder is <code>flag.png</code>.</p>
+<br>
+
+<p><img src="/images/wgmy2023-compromised/wgmy2023-compromised-4.png" alt="store-compression-method"></p>
+<p>Using the <code>file</code> command on it, shows that the file is actually a zip file with a store compression method. From this point, I went into rabbit hole thinking that I need to use <code>bkcrack</code> to brute force the keys for the zip file because of the <code>store</code> compression method.</p>
+<blockquote>
+<p><em>You can watch John Hammond’s video on that <a href="https://youtu.be/2jYorjzHsJ8?si=CRWEbIkBa2K8mAZu">here</a></em></p>
+</blockquote>
+<br>
+
+<p><img src="/images/wgmy2023-compromised/wgmy2023-compromised-5.png" alt="rdp-details"></p>
+<p>Going into Documents you can see a <code>Default.rdp</code> file, which means that this machine has been accessed before through RDP.</p>
+<br>
+
+<p><img src="/images/wgmy2023-compromised/wgmy2023-compromised-6.png" alt="werid-files"></p>
+<p>Going all around the file system, I eventually came to this directory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">svc_wgmy/AppData/Local/Microsoft/Terminal Server Client/Cache
+</code></pre></div><br>
+
+<p><img src="/images/wgmy2023-compromised/wgmy2023-compromised-7.png" alt="hmmmmmmmm"></p>
+<p>I was wondering what were those files in that directory, those files being <code>bcache24.bmc</code> and <code>Cache0000.bin</code>.</p>
+<br>
+
+<p><img src="/images/wgmy2023-compromised/wgmy2023-compromised-8.png" alt="strings"></p>
+<p>Using the typical Forensics mindset, I used <code>strings</code> and found that it was a <code>bmp</code> file but not?</p>
+<br>
+
+<p><img src="/images/wgmy2023-compromised/wgmy2023-compromised-9.png" alt="osint-baby"></p>
+<p>I decided to look up the file name and miraculously I found a blog post on this file regarding… <strong>FORENSICS</strong>!!!</p>
+<br>
+
+<p><img src="/images/wgmy2023-compromised/wgmy2023-compromised-10.png" alt="parser-tool"></p>
+<p>Apparently, the file is a cache file of /images taken as a result of RDP. The files are cached first and then sent to the client (from my understanding of how RDP works). The blog post then demonstrates using <code>bmc-tools.py</code> to parse the cache file.</p>
+<br>
+
+<p><img src="/images/wgmy2023-compromised/wgmy2023-compromised-11.png" alt="cloning-repo"></p>
+<p>So, just clone this repository:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/ANSSI-FR/bmc-tools.git
+</code></pre></div><p><img src="/images/wgmy2023-compromised/wgmy2023-compromised-12.png" alt="using-parser"></p>
+<p>And executing the files with the <code>-s</code> switch for the source of the cache file and <code>-d</code> for the destination of the <code>bmp</code> files.</p>
+<br>
+
+<p><img src="/images/wgmy2023-compromised/wgmy2023-compromised-13.png" alt="play-puzzle"></p>
+<p>So, we got some <code>bmp</code> files, what now? Well, the blog post mentioned there is a GUI tool to <em><strong><strong>piece</strong></strong></em> the puzzle together.</p>
+<br>
+
+<p><img src="/images/wgmy2023-compromised/wgmy2023-compromised-14.png" alt="Oooooo"></p>
+<p>Loading the <code>bmp</code> files into the tool and scrolling through the /images, I saw a few /images of a user typing in the password for the zip file.</p>
+<br>
+
+<p><img src="/images/wgmy2023-compromised/wgmy2023-compromised-15.png" alt="password-baby"></p>
+<p>Selecting the right /images and piecing them together, we get the password!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">WGMY_P4ssw0rd_N0t_V3ry_H4rd!!!
+</code></pre></div><br>
+
+<p><img src="/images/wgmy2023-compromised/wgmy2023-compromised-16.png" alt="unzip-flag"></p>
+<p>From here it’s just as easy as cake! Unzip <code>flag.zip</code> and <code>cat</code> out the flag!</p>
+<br>
+
+<p><img src="/images/wgmy2023-compromised/wgmy2023-compromised-17.png" alt="sheeeshhh"></p>
+<p>Sheeeeshhhhh I might be good at Forensics but sometimes or most of the times I may not know everything. So, it was a good learning experience from this challenge of the many artifacts you can find from Windows and yea I will <strong><strong><strong><strong><strong><strong><strong>totally</strong></strong></strong></strong></strong></strong></strong> take note on this challenge. Who knows? I might make a challenge based on this… Anyways, here’s the flag!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">Flag: wgmy{d1df8b8811dbe22f3dce67ef2998f21c}
+</code></pre></div>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

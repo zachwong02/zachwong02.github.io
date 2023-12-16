@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Digital Forensics on Zach&#39;s Blog</title>
+    <title>Digital-Forensics on Zach&#39;s Blog</title>
     <link>https://zachwong02.github.io/tags/digital-forensics/</link>
-    <description>Recent content in Digital Forensics on Zach&#39;s Blog</description>
+    <description>Recent content in Digital-Forensics on Zach&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 12 Dec 2023 21:45:00 +0800</lastBuildDate><atom:link href="https://zachwong02.github.io/tags/digital-forensics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Dec 2023 02:22:12 +0800</lastBuildDate><atom:link href="https://zachwong02.github.io/tags/digital-forensics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wargames 2023 Writeup [Compromised]</title>
+      <link>https://zachwong02.github.io/post/wgmy2023-compromised/</link>
+      <pubDate>Sun, 17 Dec 2023 02:22:12 +0800</pubDate>
+      
+      <guid>https://zachwong02.github.io/post/wgmy2023-compromised/</guid>
+      <description>So I participated in a CTF alone??? Yes I did! Ending 2023 off, I participated in Wargames 2023 in the student category! And oh boy for this writeup it was the King of Forensics vs the God of Forensics. However, I did learn something new today from on of the God of Forensics. With that said, let’s get into the writeup!
+The challenge was called “Compromised” and it provided a file called evidence.</description>
+    </item>
+    
     <item>
       <title>Creating My First AD Forensics Challenge</title>
       <link>https://zachwong02.github.io/post/creating-my-first-ad-forensics-challenge/</link>
