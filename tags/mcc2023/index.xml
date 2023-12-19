@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MCC2023 on Zach&#39;s Blog</title>
+    <link>https://zachwong02.github.io/tags/mcc2023/</link>
+    <description>Recent content in MCC2023 on Zach&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 20 Dec 2023 03:51:02 +0800</lastBuildDate><atom:link href="https://zachwong02.github.io/tags/mcc2023/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Experience in Malaysia Cybersecurity Camp 2023</title>
+      <link>https://zachwong02.github.io/post/mcc2023/</link>
+      <pubDate>Wed, 20 Dec 2023 03:51:02 +0800</pubDate>
+      
+      <guid>https://zachwong02.github.io/post/mcc2023/</guid>
+      <description>So, I managed to participate in Malaysia’s Cybersecurity Camp (MCC) 2023! But hold up, what is MCC? MCC is an initiative that focuses on developing a better cybersecurity community for the next generation. It involves networking with top local cybersecurity experts, facilitating student exchanges to build lasting friendships, and enjoying educational experiences in nature. The camp aims to identify talented individuals, increase their knowledge through expert guidance, close the talent gap between students and professionals, bring students to par with global peers, and produce graduates ready for the workforce with minimal training.</description>
+    </item>
+    
+  </channel>
+</rss>
