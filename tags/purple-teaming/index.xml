@@ -12,7 +12,7 @@
       <pubDate>Tue, 12 Dec 2023 21:45:00 +0800</pubDate>
       
       <guid>https://zachwong02.github.io/post/creating-my-first-ad-forensics-challenge/</guid>
-      <description>Introduction So Active Directory, we all heard of it, seen it, did a penetration test on it before, but have you ever done digital forensics on it? Well, I have not, so let’s create a challenge for my university’s ASEAN Battle of Hackers 2023! It took one week to setup the environment and test it but no one solved it, so let’s make a blog post and show you how to make the environment!</description>
+      <description>.toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Introduction So What is Active Directory (AD)? Requirements and Specifications Needed Building the Environment  Installing Active Directory Setting Up Workstations Creating Users &amp;amp; Groups on the Domain Controller Group Policies Creating Workstation 1 Creating Workstation 2   Creating Evidence  Initial Access Privilege Escalation Pivoting Generating Logs   Acquiring the Evidence  Domain Controller Evidence Workstation Evidence   Conclusion    Introduction So Active Directory, we all heard of it, seen it, did a penetration test on it before, but have you ever done digital forensics on it?</description>
     </item>
     
   </channel>

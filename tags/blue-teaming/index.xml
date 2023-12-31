@@ -12,8 +12,7 @@
       <pubDate>Fri, 22 Dec 2023 21:32:20 +0800</pubDate>
       
       <guid>https://zachwong02.github.io/post/malware-finds-a-way/</guid>
-      <description>This is the hardest challenge I have ever done and it was given to our team (DinoDefend3rs) during SiberSiaga 2023. However, as a challenge creator, I have made a very hard challenge as well! Check out how I made it here!
-Anyways this is one of the challenges I call a PTSD challenge as we were so close to solving it but didn’t. However, we did find out how to get the flag after the CTF has ended.</description>
+      <description>.toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Dynamic Analysis Static Analysis  Kertas Kerja Siber Siaga.docx.exe MSVCR100.dll   Analysis    This is the hardest challenge I have ever done and it was given to our team (DinoDefend3rs) during SiberSiaga 2023. However, as a challenge creator, I have made a very hard challenge as well!</description>
     </item>
     
     <item>
@@ -22,8 +21,7 @@ Anyways this is one of the challenges I call a PTSD challenge as we were so clos
       <pubDate>Sun, 03 Sep 2023 20:27:31 +0800</pubDate>
       
       <guid>https://zachwong02.github.io/post/creating-an-android-forensics-lab/</guid>
-      <description>Introduction Before I start this tutorial/blog/walkthrough on how to build your own Android environment for digital forensics purposes, I have to give some context on how I started this amateur adventure.
-First of all, I am a challenge creator for my university&amp;rsquo;s cybersecurity committee and there was a CTF competition held there on the 2nd of September 2023. So, I took it upon myself to make something unique for the participants and myself&amp;hellip; And oh boy, was it unique and difficult to do for someone like me.</description>
+      <description>.toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Introduction Installing Android Studio Rooting Your Device Instructions  Automating Root Access Connecting to the Android Device Setting the Time Installing Applications Setting the Android Device&amp;rsquo;s Phone Number Sending Messages Receiving Messages Sending Calls Receiving Calls Transferring Files Extracting Evidence   Conclusion    Introduction Before I start this tutorial/blog/walkthrough on how to build your own Android environment for digital forensics purposes, I have to give some context on how I started this amateur adventure.</description>
     </item>
     
   </channel>

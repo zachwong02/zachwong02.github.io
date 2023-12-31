@@ -12,8 +12,7 @@
       <pubDate>Fri, 22 Dec 2023 21:32:20 +0800</pubDate>
       
       <guid>https://zachwong02.github.io/post/malware-finds-a-way/</guid>
-      <description>This is the hardest challenge I have ever done and it was given to our team (DinoDefend3rs) during SiberSiaga 2023. However, as a challenge creator, I have made a very hard challenge as well! Check out how I made it here!
-Anyways this is one of the challenges I call a PTSD challenge as we were so close to solving it but didn’t. However, we did find out how to get the flag after the CTF has ended.</description>
+      <description>.toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Dynamic Analysis Static Analysis  Kertas Kerja Siber Siaga.docx.exe MSVCR100.dll   Analysis    This is the hardest challenge I have ever done and it was given to our team (DinoDefend3rs) during SiberSiaga 2023. However, as a challenge creator, I have made a very hard challenge as well!</description>
     </item>
     
     <item>
@@ -22,7 +21,7 @@ Anyways this is one of the challenges I call a PTSD challenge as we were so clos
       <pubDate>Wed, 20 Dec 2023 03:51:02 +0800</pubDate>
       
       <guid>https://zachwong02.github.io/post/mcc2023/</guid>
-      <description>Introduction So, I managed to participate in Malaysia’s Cybersecurity Camp (MCC) 2023! But hold up, what is MCC? MCC is an initiative that focuses on developing a better cybersecurity community for the next generation. It involves networking with top local cybersecurity experts, facilitating student exchanges to build lasting friendships, and enjoying educational experiences in nature. The camp aims to identify talented individuals, increase their knowledge through expert guidance, close the talent gap between students and professionals, bring students to par with global peers, and produce graduates ready for the workforce with minimal training.</description>
+      <description>.toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Introduction Registering for MCC2023 The Interview for MCC2023 Day 1 - The Journey Begins Day 2 - King of Forensics Meets the God of Forensics Day 3 - Purple Teamer is Red Teaming Day 4 - The Journey Has Just Begun    Introduction So, I managed to participate in Malaysia’s Cybersecurity Camp (MCC) 2023!</description>
     </item>
     
     <item>
@@ -51,7 +50,7 @@ The challenge was called “Compromised” and it provided a file called evidenc
       <pubDate>Tue, 12 Dec 2023 21:45:00 +0800</pubDate>
       
       <guid>https://zachwong02.github.io/post/creating-my-first-ad-forensics-challenge/</guid>
-      <description>Introduction So Active Directory, we all heard of it, seen it, did a penetration test on it before, but have you ever done digital forensics on it? Well, I have not, so let’s create a challenge for my university’s ASEAN Battle of Hackers 2023! It took one week to setup the environment and test it but no one solved it, so let’s make a blog post and show you how to make the environment!</description>
+      <description>.toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Introduction So What is Active Directory (AD)? Requirements and Specifications Needed Building the Environment  Installing Active Directory Setting Up Workstations Creating Users &amp;amp; Groups on the Domain Controller Group Policies Creating Workstation 1 Creating Workstation 2   Creating Evidence  Initial Access Privilege Escalation Pivoting Generating Logs   Acquiring the Evidence  Domain Controller Evidence Workstation Evidence   Conclusion    Introduction So Active Directory, we all heard of it, seen it, did a penetration test on it before, but have you ever done digital forensics on it?</description>
     </item>
     
     <item>
@@ -60,8 +59,7 @@ The challenge was called “Compromised” and it provided a file called evidenc
       <pubDate>Sun, 03 Sep 2023 20:27:31 +0800</pubDate>
       
       <guid>https://zachwong02.github.io/post/creating-an-android-forensics-lab/</guid>
-      <description>Introduction Before I start this tutorial/blog/walkthrough on how to build your own Android environment for digital forensics purposes, I have to give some context on how I started this amateur adventure.
-First of all, I am a challenge creator for my university&amp;rsquo;s cybersecurity committee and there was a CTF competition held there on the 2nd of September 2023. So, I took it upon myself to make something unique for the participants and myself&amp;hellip; And oh boy, was it unique and difficult to do for someone like me.</description>
+      <description>.toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Introduction Installing Android Studio Rooting Your Device Instructions  Automating Root Access Connecting to the Android Device Setting the Time Installing Applications Setting the Android Device&amp;rsquo;s Phone Number Sending Messages Receiving Messages Sending Calls Receiving Calls Transferring Files Extracting Evidence   Conclusion    Introduction Before I start this tutorial/blog/walkthrough on how to build your own Android environment for digital forensics purposes, I have to give some context on how I started this amateur adventure.</description>
     </item>
     
   </channel>

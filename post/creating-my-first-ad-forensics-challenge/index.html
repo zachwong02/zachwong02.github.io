@@ -8,16 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Zach Wong" />
     <meta name="description" content="" />
-    <link rel="stylesheet" href="/css/main.min.3efbf79cef3011b321e49237647ac4b275d5730c974b903a9f2a87c946d8f071.css" />
-    
+    <link rel="stylesheet" href="/css/main.min.a58e9bed6527e990a37775472f2144386fc6ece1b4392c32c803e3ce66b3543a.css" />
 
     
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Creating My First AD Forensics Challenge"/>
-<meta name="twitter:description" content="Introduction So Active Directory, we all heard of it, seen it, did a penetration test on it before, but have you ever done digital forensics on it? Well, I have not, so let’s create a challenge for my university’s ASEAN Battle of Hackers 2023! It took one week to setup the environment and test it but no one solved it, so let’s make a blog post and show you how to make the environment!"/>
+<meta name="twitter:description" content=".toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Introduction So What is Active Directory (AD)? Requirements and Specifications Needed Building the Environment  Installing Active Directory Setting Up Workstations Creating Users &amp; Groups on the Domain Controller Group Policies Creating Workstation 1 Creating Workstation 2   Creating Evidence  Initial Access Privilege Escalation Pivoting Generating Logs   Acquiring the Evidence  Domain Controller Evidence Workstation Evidence   Conclusion    Introduction So Active Directory, we all heard of it, seen it, did a penetration test on it before, but have you ever done digital forensics on it?"/>
 
     <meta property="og:title" content="Creating My First AD Forensics Challenge" />
-<meta property="og:description" content="Introduction So Active Directory, we all heard of it, seen it, did a penetration test on it before, but have you ever done digital forensics on it? Well, I have not, so let’s create a challenge for my university’s ASEAN Battle of Hackers 2023! It took one week to setup the environment and test it but no one solved it, so let’s make a blog post and show you how to make the environment!" />
+<meta property="og:description" content=".toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Introduction So What is Active Directory (AD)? Requirements and Specifications Needed Building the Environment  Installing Active Directory Setting Up Workstations Creating Users &amp; Groups on the Domain Controller Group Policies Creating Workstation 1 Creating Workstation 2   Creating Evidence  Initial Access Privilege Escalation Pivoting Generating Logs   Acquiring the Evidence  Domain Controller Evidence Workstation Evidence   Conclusion    Introduction So Active Directory, we all heard of it, seen it, did a penetration test on it before, but have you ever done digital forensics on it?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://zachwong02.github.io/post/creating-my-first-ad-forensics-challenge/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2023-12-12T21:45:00+08:00" />
@@ -43,14 +42,14 @@
       <div class="app-header-social">
         
           <a href="https://github.com/zachwong02" target="_blank" rel="noreferrer noopener me">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
   <title>Github</title>
   <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
 </svg>
           </a>
         
           <a href="https://www.linkedin.com/in/zach-wong-zhi-zhen-a39724173" target="_blank" rel="noreferrer noopener me">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
   <title>Linkedin</title>
   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
 </svg>
@@ -65,21 +64,21 @@
       <h1 class ="post-title">Creating My First AD Forensics Challenge</h1>
       <div class="post-meta">
         <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
   <title>calendar</title>
   <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
 </svg>
           Dec 12, 2023
         </div>
         <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
   <title>clock</title>
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
           25 min read
         </div>
         <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
   <title>tag</title>
   <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
 </svg>
@@ -91,7 +90,57 @@
       </div>
     </header>
     <div class="post-content">
-      <h2 id="introduction">Introduction</h2>
+      <style>
+    .toc {
+        margin-top: 10px;
+        display: inline-block;
+        padding: 10px 10px 0 10px;
+        background: #242930;
+    }
+    ul {
+        margin-top: 0;
+        padding-left: 25px;
+        list-style-type: square;
+    }
+</style>
+
+<div class='toc'>
+    <b> Content </b>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#so-what-is-active-directory-ad">So What is Active Directory (AD)?</a></li>
+    <li><a href="#requirements-and-specifications-needed">Requirements and Specifications Needed</a></li>
+    <li><a href="#building-the-environment">Building the Environment</a>
+      <ul>
+        <li><a href="#installing-active-directory">Installing Active Directory</a></li>
+        <li><a href="#setting-up-workstations">Setting Up Workstations</a></li>
+        <li><a href="#creating-users--groups-on-the-domain-controller">Creating Users &amp; Groups on the Domain Controller</a></li>
+        <li><a href="#group-policies">Group Policies</a></li>
+        <li><a href="#creating-workstation-1">Creating Workstation 1</a></li>
+        <li><a href="#creating-workstation-2">Creating Workstation 2</a></li>
+      </ul>
+    </li>
+    <li><a href="#creating-evidence">Creating Evidence</a>
+      <ul>
+        <li><a href="#initial-access">Initial Access</a></li>
+        <li><a href="#privilege-escalation">Privilege Escalation</a></li>
+        <li><a href="#pivoting">Pivoting</a></li>
+        <li><a href="#generating-logs">Generating Logs</a></li>
+      </ul>
+    </li>
+    <li><a href="#acquiring-the-evidence">Acquiring the Evidence</a>
+      <ul>
+        <li><a href="#domain-controller-evidence">Domain Controller Evidence</a></li>
+        <li><a href="#workstation-evidence">Workstation Evidence</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+</div>
+
+<h2 id="introduction">Introduction</h2>
 <p>So Active Directory, we all heard of it, seen it, did a penetration test on it before, but have you ever done digital forensics on it? Well, I have not, so let’s create a challenge for my university’s <strong>ASEAN Battle of Hackers 2023</strong>! It took one week to setup the environment and test it but no one solved it, so let’s make a blog post and show you how to make the environment!
 <br>
 </p>
