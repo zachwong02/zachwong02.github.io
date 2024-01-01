@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 22 Dec 2023 21:32:20 +0800</lastBuildDate><atom:link href="https://zachwong02.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Command Line Templates</title>
+      <link>https://zachwong02.github.io/command-line-templates/</link>
+      <pubDate>Mon, 01 Jan 2024 10:48:18 +0800</pubDate>
+      
+      <guid>https://zachwong02.github.io/command-line-templates/</guid>
+      <description>.toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Sublime Regex Baby  Find IP Addresses Find Flags Between { } Find Lines with Substring Detecting Open Redirect Attacks Detecting Directory Traversal Attacks (nginx) Regex to Detect Failed Logins (nginx) Detecting !DOCTYPE Regex Select Lines That Doesn’t Include Substring   Smash Bash  Base64 Decode a File Downloading Recursively with wget Downloading a Directory with wget yt-dlp (Downloading the best quality from a file) Examining .</description>
+    </item>
+    
+    <item>
       <title>Siber Siaga 2023 Writeup [Malbot]</title>
       <link>https://zachwong02.github.io/post/malware-finds-a-way/</link>
       <pubDate>Fri, 22 Dec 2023 21:32:20 +0800</pubDate>

