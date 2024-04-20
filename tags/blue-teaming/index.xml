@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blue-Teaming on Zach&#39;s Blog</title>
+    <title>Blue-Teaming on jigsaw</title>
     <link>https://zachwong02.github.io/tags/blue-teaming/</link>
-    <description>Recent content in Blue-Teaming on Zach&#39;s Blog</description>
+    <description>Recent content in Blue-Teaming on jigsaw</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <lastBuildDate>Fri, 22 Dec 2023 21:32:20 +0800</lastBuildDate><atom:link href="https://zachwong02.github.io/tags/blue-teaming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Siber Siaga 2023 Writeup [Malbot]</title>
@@ -12,7 +13,7 @@
       <pubDate>Fri, 22 Dec 2023 21:32:20 +0800</pubDate>
       
       <guid>https://zachwong02.github.io/post/malware-finds-a-way/</guid>
-      <description>.toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Dynamic Analysis Static Analysis  Kertas Kerja Siber Siaga.docx.exe MSVCR100.dll   Analysis    This is the hardest challenge I have ever done and it was given to our team (DinoDefend3rs) during SiberSiaga 2023. However, as a challenge creator, I have made a very hard challenge as well!</description>
+      <description></description>
     </item>
     
     <item>
@@ -21,7 +22,7 @@
       <pubDate>Sun, 03 Sep 2023 20:27:31 +0800</pubDate>
       
       <guid>https://zachwong02.github.io/post/creating-an-android-forensics-lab/</guid>
-      <description>.toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Introduction Installing Android Studio Rooting Your Device Instructions  Automating Root Access Connecting to the Android Device Setting the Time Installing Applications Setting the Android Device&amp;rsquo;s Phone Number Sending Messages Receiving Messages Sending Calls Receiving Calls Transferring Files Extracting Evidence   Conclusion    Introduction Before I start this tutorial/blog/walkthrough on how to build your own Android environment for digital forensics purposes, I have to give some context on how I started this amateur adventure.</description>
+      <description></description>
     </item>
     
   </channel>

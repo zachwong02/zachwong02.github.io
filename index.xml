@@ -1,27 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Zach&#39;s Blog</title>
+    <title>Home on jigsaw</title>
     <link>https://zachwong02.github.io/</link>
-    <description>Recent content on Zach&#39;s Blog</description>
+    <description>Recent content in Home on jigsaw</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 22 Dec 2023 21:32:20 +0800</lastBuildDate><atom:link href="https://zachwong02.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Command Line Templates</title>
-      <link>https://zachwong02.github.io/command-line-templates/</link>
-      <pubDate>Mon, 01 Jan 2024 10:48:18 +0800</pubDate>
-      
-      <guid>https://zachwong02.github.io/command-line-templates/</guid>
-      <description>.toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Sublime Regex Baby  Find IP Addresses Find Flags Between { } Find Lines with Substring Detecting Open Redirect Attacks Detecting Directory Traversal Attacks (nginx) Regex to Detect Failed Logins (nginx) Detecting !DOCTYPE Regex Select Lines That Doesn’t Include Substring   Smash Bash  Base64 Decode a File Downloading Recursively with wget Downloading a Directory with wget yt-dlp (Downloading the best quality from a file) Examining .</description>
-    </item>
-    
+    <language>en</language>
+    <lastBuildDate>Fri, 01 Dec 2023 23:42:38 +0800</lastBuildDate><atom:link href="https://zachwong02.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Siber Siaga 2023 Writeup [Malbot]</title>
       <link>https://zachwong02.github.io/post/malware-finds-a-way/</link>
       <pubDate>Fri, 22 Dec 2023 21:32:20 +0800</pubDate>
       
       <guid>https://zachwong02.github.io/post/malware-finds-a-way/</guid>
-      <description>.toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Dynamic Analysis Static Analysis  Kertas Kerja Siber Siaga.docx.exe MSVCR100.dll   Analysis    This is the hardest challenge I have ever done and it was given to our team (DinoDefend3rs) during SiberSiaga 2023. However, as a challenge creator, I have made a very hard challenge as well!</description>
+      <description></description>
     </item>
     
     <item>
@@ -30,7 +22,7 @@
       <pubDate>Wed, 20 Dec 2023 03:51:02 +0800</pubDate>
       
       <guid>https://zachwong02.github.io/post/mcc2023/</guid>
-      <description>.toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Introduction Registering for MCC2023 The Interview for MCC2023 Day 1 - The Journey Begins Day 2 - King of Forensics Meets the God of Forensics Day 3 - Purple Teamer is Red Teaming Day 4 - The Journey Has Just Begun    Introduction So, I managed to participate in Malaysia’s Cybersecurity Camp (MCC) 2023!</description>
+      <description></description>
     </item>
     
     <item>
@@ -39,8 +31,7 @@
       <pubDate>Sun, 17 Dec 2023 03:27:01 +0800</pubDate>
       
       <guid>https://zachwong02.github.io/post/wgmy2023-seeyou/</guid>
-      <description>So another writeup for another Forensics challenge for Wargames 2023! I ended the year off with a PTSD challenge as usual with any CTF I had. This time it was a challenge I was very familiar with after seeing this type of challenge in PicoCTF but I was concentrating on the wrong things. With that said, let’s get into the writeup!
-So, we can see here that a file is provided to us and that the description of the challenge mentioned that data has been exfiltrated through the network internally.</description>
+      <description></description>
     </item>
     
     <item>
@@ -49,8 +40,7 @@ So, we can see here that a file is provided to us and that the description of th
       <pubDate>Sun, 17 Dec 2023 02:22:12 +0800</pubDate>
       
       <guid>https://zachwong02.github.io/post/wgmy2023-compromised/</guid>
-      <description>So I participated in a CTF alone??? Yes I did! Ending 2023 off, I participated in Wargames 2023 in the student category! And oh boy for this writeup it was the King of Forensics vs the God of Forensics. However, I did learn something new today from one of the God of Forensics. With that said, let’s get into the writeup!
-The challenge was called “Compromised” and it provided a file called evidence.</description>
+      <description></description>
     </item>
     
     <item>
@@ -59,16 +49,7 @@ The challenge was called “Compromised” and it provided a file called evidenc
       <pubDate>Tue, 12 Dec 2023 21:45:00 +0800</pubDate>
       
       <guid>https://zachwong02.github.io/post/creating-my-first-ad-forensics-challenge/</guid>
-      <description>.toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Introduction So What is Active Directory (AD)? Requirements and Specifications Needed Building the Environment  Installing Active Directory Setting Up Workstations Creating Users &amp;amp; Groups on the Domain Controller Group Policies Creating Workstation 1 Creating Workstation 2   Creating Evidence  Initial Access Privilege Escalation Pivoting Generating Logs   Acquiring the Evidence  Domain Controller Evidence Workstation Evidence   Conclusion    Introduction So Active Directory, we all heard of it, seen it, did a penetration test on it before, but have you ever done digital forensics on it?</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://zachwong02.github.io/about/</link>
-      <pubDate>Fri, 01 Dec 2023 23:42:38 +0800</pubDate>
-      
-      <guid>https://zachwong02.github.io/about/</guid>
-      <description>$ introduction konnichiwa i&amp;rsquo;m Zach, a purple teamer, a ctf player and a challenge creator! i&amp;rsquo;m the type of guy who is interested in anything IT related, because a jack of all trades is master of none but oftentimes better than a master of one! i love building vulnerable and CVE based labs and simulating attacks on them. after simulating the attacks, i&amp;rsquo;ll switch hats and perform digital forensics on the labs.</description>
+      <description></description>
     </item>
     
     <item>
@@ -77,7 +58,7 @@ The challenge was called “Compromised” and it provided a file called evidenc
       <pubDate>Sun, 03 Sep 2023 20:27:31 +0800</pubDate>
       
       <guid>https://zachwong02.github.io/post/creating-an-android-forensics-lab/</guid>
-      <description>.toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Introduction Installing Android Studio Rooting Your Device Instructions  Automating Root Access Connecting to the Android Device Setting the Time Installing Applications Setting the Android Device&amp;rsquo;s Phone Number Sending Messages Receiving Messages Sending Calls Receiving Calls Transferring Files Extracting Evidence   Conclusion    Introduction Before I start this tutorial/blog/walkthrough on how to build your own Android environment for digital forensics purposes, I have to give some context on how I started this amateur adventure.</description>
+      <description></description>
     </item>
     
   </channel>

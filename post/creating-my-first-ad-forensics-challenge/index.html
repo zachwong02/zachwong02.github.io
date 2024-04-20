@@ -1,149 +1,58 @@
-<!doctype html>
-<html lang="en-us">
-  <head>
-    <title>Creating My First AD Forensics Challenge // Zach&#39;s Blog</title>
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.92.2" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Zach Wong" />
-    <meta name="description" content="" />
-    <link rel="stylesheet" href="/css/main.min.a58e9bed6527e990a37775472f2144386fc6ece1b4392c32c803e3ce66b3543a.css" />
+<!DOCTYPE html>
+<html lang="en">
 
+    <head><title>Creating My First AD Forensics Challenge &ndash; jigsaw</title>
+<meta name="description" content="i&#39;m zach and I build labs and create ctf challenges">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"/>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="https://zachwong02.github.io/css/palettes/base16-dark.css">
+<link rel="stylesheet" href="https://zachwong02.github.io/css/risotto.css">
+<link rel="stylesheet" href="https://zachwong02.github.io/css/custom.css">
+
+
+<link rel="icon" href="https://zachwong02.github.io/favicon.ico">
+
+
+
+
+
+
+
+</head>
+
+    <body>
+        <div class="page">
+
+            <header class="page__header"><nav class="page__nav main-nav">
+    <ul>
+      <li class="nomarker"><h1 class="page__logo"><a href="https://zachwong02.github.io" class="page__logo-inner">jigsaw</a></h1></li>
     
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Creating My First AD Forensics Challenge"/>
-<meta name="twitter:description" content=".toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Introduction So What is Active Directory (AD)? Requirements and Specifications Needed Building the Environment  Installing Active Directory Setting Up Workstations Creating Users &amp; Groups on the Domain Controller Group Policies Creating Workstation 1 Creating Workstation 2   Creating Evidence  Initial Access Privilege Escalation Pivoting Generating Logs   Acquiring the Evidence  Domain Controller Evidence Workstation Evidence   Conclusion    Introduction So Active Directory, we all heard of it, seen it, did a penetration test on it before, but have you ever done digital forensics on it?"/>
-
-    <meta property="og:title" content="Creating My First AD Forensics Challenge" />
-<meta property="og:description" content=".toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Introduction So What is Active Directory (AD)? Requirements and Specifications Needed Building the Environment  Installing Active Directory Setting Up Workstations Creating Users &amp; Groups on the Domain Controller Group Policies Creating Workstation 1 Creating Workstation 2   Creating Evidence  Initial Access Privilege Escalation Pivoting Generating Logs   Acquiring the Evidence  Domain Controller Evidence Workstation Evidence   Conclusion    Introduction So Active Directory, we all heard of it, seen it, did a penetration test on it before, but have you ever done digital forensics on it?" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://zachwong02.github.io/post/creating-my-first-ad-forensics-challenge/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-12-12T21:45:00+08:00" />
-<meta property="article:modified_time" content="2023-12-12T21:45:00+08:00" />
-
-
-
-  </head>
-  <body>
-    <header class="app-header">
-      <a href="https://zachwong02.github.io"><img class="app-header-avatar" src="/avatar.jpg" alt="Zach Wong" /></a>
-      <span class="app-header-title">Zach&#39;s Blog</span>
-      <nav class="app-header-menu">
-          <a class="app-header-menu-item" href="/">Home</a>
-             | 
-          
-          <a class="app-header-menu-item" href="/tags/">Tags</a>
-             | 
-          
-          <a class="app-header-menu-item" href="/about/">About</a>
-             | 
-          
-          <a class="app-header-menu-item" href="/command-line-templates/">Cheatsheet</a>
-      </nav>
-      <p>i&#39;m zach and I build labs</p>
-      <div class="app-header-social">
-        
-          <a href="https://github.com/zachwong02" target="_blank" rel="noreferrer noopener me">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
-  <title>Github</title>
-  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-</svg>
-          </a>
-        
-          <a href="https://www.linkedin.com/in/zach-wong-zhi-zhen-a39724173" target="_blank" rel="noreferrer noopener me">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
-  <title>Linkedin</title>
-  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
-</svg>
-          </a>
-        
-      </div>
-    </header>
-    <main class="app-container">
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class ="post-title">Creating My First AD Forensics Challenge</h1>
-      <div class="post-meta">
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
-  <title>calendar</title>
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
-</svg>
-          Dec 12, 2023
-        </div>
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg>
-          25 min read
-        </div>
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
-  <title>tag</title>
-  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
-</svg>
-              <a class="tag" href="https://zachwong02.github.io/tags/purple-teaming/">Purple-Teaming</a>
-              <a class="tag" href="https://zachwong02.github.io/tags/lab-creation/">Lab-Creation</a>
-              <a class="tag" href="https://zachwong02.github.io/tags/digital-forensics/">Digital-Forensics</a>
-              <a class="tag" href="https://zachwong02.github.io/tags/challenge-creation/">Challenge-Creation</a>
-        </div>
-      </div>
-    </header>
-    <div class="post-content">
-      <style>
-    .toc {
-        margin-top: 10px;
-        display: inline-block;
-        padding: 10px 10px 0 10px;
-        background: #242930;
-    }
-    ul {
-        margin-top: 0;
-        padding-left: 25px;
-        list-style-type: square;
-    }
-</style>
-
-<div class='toc'>
-    <b> Content </b>
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#so-what-is-active-directory-ad">So What is Active Directory (AD)?</a></li>
-    <li><a href="#requirements-and-specifications-needed">Requirements and Specifications Needed</a></li>
-    <li><a href="#building-the-environment">Building the Environment</a>
-      <ul>
-        <li><a href="#installing-active-directory">Installing Active Directory</a></li>
-        <li><a href="#setting-up-workstations">Setting Up Workstations</a></li>
-        <li><a href="#creating-users--groups-on-the-domain-controller">Creating Users &amp; Groups on the Domain Controller</a></li>
-        <li><a href="#group-policies">Group Policies</a></li>
-        <li><a href="#creating-workstation-1">Creating Workstation 1</a></li>
-        <li><a href="#creating-workstation-2">Creating Workstation 2</a></li>
-      </ul>
-    </li>
-    <li><a href="#creating-evidence">Creating Evidence</a>
-      <ul>
-        <li><a href="#initial-access">Initial Access</a></li>
-        <li><a href="#privilege-escalation">Privilege Escalation</a></li>
-        <li><a href="#pivoting">Pivoting</a></li>
-        <li><a href="#generating-logs">Generating Logs</a></li>
-      </ul>
-    </li>
-    <li><a href="#acquiring-the-evidence">Acquiring the Evidence</a>
-      <ul>
-        <li><a href="#domain-controller-evidence">Domain Controller Evidence</a></li>
-        <li><a href="#workstation-evidence">Workstation Evidence</a></li>
-      </ul>
-    </li>
-    <li><a href="#conclusion">Conclusion</a></li>
-  </ul>
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://zachwong02.github.io/tags/" title="">Tags</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item active" href="https://zachwong02.github.io/post/" title="Posts">Posts</a></li>
+    
+    </ul>
 </nav>
-</div>
 
-<h2 id="introduction">Introduction</h2>
+</header>
+
+            <section class="page__body">
+    <header class="content__header">
+        <h1>Creating My First AD Forensics Challenge</h1>
+    </header>
+    <div class="content__body">
+        <h2 id="introduction">Introduction</h2>
 <p>So Active Directory, we all heard of it, seen it, did a penetration test on it before, but have you ever done digital forensics on it? Well, I have not, so let’s create a challenge for my university’s <strong>ASEAN Battle of Hackers 2023</strong>! It took one week to setup the environment and test it but no one solved it, so let’s make a blog post and show you how to make the environment!
 <br>
 </p>
@@ -277,135 +186,135 @@ Set-DnsClientServerAddress -InterfaceIndex &lt;NETWORK_INTERFACE&gt; -ServerAddr
 <blockquote>
 <p><em>Note: both of these scripts must exist and executed within the domain controller</em></p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#66d9ef">param</span>(
-    [<span style="color:#66d9ef">Parameter</span>(<span style="color:#66d9ef">Mandatory</span>=$true)] $JSONFile,
-    <span style="color:#66d9ef">[switch]</span>$Revert
+<pre tabindex="0"><code>param(
+    [Parameter(Mandatory=$true)] $JSONFile,
+    [switch]$Revert
 )
 
-<span style="color:#66d9ef">function</span> CreateADGroup {
-    <span style="color:#66d9ef">param</span> ([<span style="color:#66d9ef">Parameter</span>(<span style="color:#66d9ef">Mandatory</span>=$true)] $groupObject)
+function CreateADGroup {
+    param ([Parameter(Mandatory=$true)] $groupObject)
     
     $name = $groupObject.name
 
     New-ADGroup -name $name -GroupScope Global
 }
 
-<span style="color:#66d9ef">function</span> RemoveADGroup {
-    <span style="color:#66d9ef">param</span> ([<span style="color:#66d9ef">Parameter</span>(<span style="color:#66d9ef">Mandatory</span>=$true)] $groupObject)
+function RemoveADGroup {
+    param ([Parameter(Mandatory=$true)] $groupObject)
     
     $name = $groupObject.name
 
-    Remove-ADGroup -Identity $name -Confirm<span style="color:#960050;background-color:#1e0010">:</span>$false
+    Remove-ADGroup -Identity $name -Confirm:$false
 }
 
-<span style="color:#66d9ef">function</span> WeakenPasswordPolicy() {
+function WeakenPasswordPolicy() {
     secedit /export /cfg C:\Windows\Tasks\secpol.cfg
-    (Get-Content C:\Windows\Tasks\secpol.cfg).replace(<span style="color:#e6db74">&#39;PasswordComplexity = 1&#39;</span>, <span style="color:#e6db74">&#39;PasswordComplexity = 0&#39;</span>).replace(<span style="color:#e6db74">&#39;MinimumPasswordLength = 7&#39;</span>, <span style="color:#e6db74">&#39;MinimumPasswordLength = 1&#39;</span>) | Out-File C:\Windows\Tasks\secpol.cfg
+    (Get-Content C:\Windows\Tasks\secpol.cfg).replace('PasswordComplexity = 1', 'PasswordComplexity = 0').replace('MinimumPasswordLength = 7', 'MinimumPasswordLength = 1') | Out-File C:\Windows\Tasks\secpol.cfg
     secedit /configure /db C:\Windows\Security\local.sdb /cfg C:\Windows\Tasks\secpol.cfg /areas SECURITYPOLICY
-    rm C:\Windows\Tasks\secpol.cfg -Confirm<span style="color:#960050;background-color:#1e0010">:</span>$false
+    rm C:\Windows\Tasks\secpol.cfg -Confirm:$false
 }
-<span style="color:#66d9ef">function</span> StrengthenPasswordPolicy() {
+function StrengthenPasswordPolicy() {
     secedit /export /cfg C:\Windows\Tasks\secpol.cfg
-    (Get-Content C:\Windows\Tasks\secpol.cfg).replace(<span style="color:#e6db74">&#39;PasswordComplexity = 0&#39;</span>, <span style="color:#e6db74">&#39;PasswordComplexity = 1&#39;</span>).replace(<span style="color:#e6db74">&#39;MinimumPasswordLength = 1&#39;</span>, <span style="color:#e6db74">&#39;MinimumPasswordLength = 7&#39;</span>) | Out-File C:\Windows\Tasks\secpol.cfg
-    secedit /configure /db C:\https<span style="color:#960050;background-color:#1e0010">:</span>//tb.rg-adguard.net/public.phpWindows\Security\local.sdb /cfg C:\Windows\Tasks\secpol.cfg /areas SECURITYPOLICY
-    rm C:\Windows\Tasks\secpol.cfg -Confirm<span style="color:#960050;background-color:#1e0010">:</span>$false
+    (Get-Content C:\Windows\Tasks\secpol.cfg).replace('PasswordComplexity = 0', 'PasswordComplexity = 1').replace('MinimumPasswordLength = 1', 'MinimumPasswordLength = 7') | Out-File C:\Windows\Tasks\secpol.cfg
+    secedit /configure /db C:\https://tb.rg-adguard.net/public.phpWindows\Security\local.sdb /cfg C:\Windows\Tasks\secpol.cfg /areas SECURITYPOLICY
+    rm C:\Windows\Tasks\secpol.cfg -Confirm:$false
 }
 
-<span style="color:#66d9ef">function</span> CreateADUser {
-    <span style="color:#66d9ef">param</span> ([<span style="color:#66d9ef">Parameter</span>(<span style="color:#66d9ef">Mandatory</span>=$true)] $userObject)
+function CreateADUser {
+    param ([Parameter(Mandatory=$true)] $userObject)
     
     $name = $userObject.name
     $password = $userObject.password
     
-    $firstname,$lastname = $name.Split(<span style="color:#e6db74">&#34; &#34;</span>)
+    $firstname,$lastname = $name.Split(&quot; &quot;)
     $username = ($firstname[0] + $lastname).ToLower()
 
-    <span style="color:#66d9ef">if</span> ($userObject.kerberoastable) {
+    if ($userObject.kerberoastable) {
         $username = $name
     }
 
     $SamAccountName = $username
     $principalname = $username
 
-    <span style="color:#75715e"># Creates the AD user account</span>
-    New-ADUser -Name <span style="color:#e6db74">&#34;$name&#34;</span> -GivenName $firstname -Surname $lastname -SamAccountName $SamAccountName -UserPrincipalName $principalname@$Global:Domain -AccountPassword (ConvertTo-SecureString $password -AsPlainText -Force) -PassThru | Enable-ADAccount
+    # Creates the AD user account
+    New-ADUser -Name &quot;$name&quot; -GivenName $firstname -Surname $lastname -SamAccountName $SamAccountName -UserPrincipalName $principalname@$Global:Domain -AccountPassword (ConvertTo-SecureString $password -AsPlainText -Force) -PassThru | Enable-ADAccount
 		
-		<span style="color:#75715e"># Should have added this lol</span>
-		<span style="color:#75715e"># Set-ADUser -Identity $SamAccountName -LogonWorkstations &lt;COMPUTER_NAME&gt; </span>
+		# Should have added this lol
+		# Set-ADUser -Identity $SamAccountName -LogonWorkstations &lt;COMPUTER_NAME&gt; 
 
-    <span style="color:#66d9ef">if</span>($userObject.flag){
-    $flag = <span style="color:#66d9ef">[Convert]</span>::ToBase64String(<span style="color:#66d9ef">[System.Text.Encoding]</span>::Unicode.GetBytes(<span style="color:#e6db74">&#34;Wow good job finding me! Here&#39;s one third of the flag &amp; the password: ABOH23{INT3rN : $password&#34;</span>))
+    if($userObject.flag){
+    $flag = [Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes(&quot;Wow good job finding me! Here's one third of the flag &amp; the password: ABOH23{INT3rN : $password&quot;))
         Set-ADUser $principalname -Description $flag
     }
 
-    <span style="color:#66d9ef">if</span>($userObject.kerberoastable){
+    if($userObject.kerberoastable){
         $spn = $userObject.kerberoastable.spn
         setspn -a $spn/$username.$Global:Domain $Global:BaseDomain\$username
     } 
 
-    <span style="color:#75715e"># Adds AD user to group</span>
-    <span style="color:#66d9ef">foreach</span> ($group_name <span style="color:#66d9ef">in</span> $userObject.groups) {
+    # Adds AD user to group
+    foreach ($group_name in $userObject.groups) {
         
-        <span style="color:#66d9ef">try</span> {
-            Get-ADGroup -Identity <span style="color:#e6db74">&#34;$group_name&#34;</span>
+        try {
+            Get-ADGroup -Identity &quot;$group_name&quot;
             Add-ADGroupMember -Identity $group_name -Members $username
         }
-        <span style="color:#66d9ef">catch</span> <span style="color:#66d9ef">[Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException]</span>
+        catch [Microsoft.ActiveDirectory.Management.ADIdentityNotFoundException]
         {
-            Write-Warning <span style="color:#960050;background-color:#1e0010">“</span>User $name NOT added to group $group_name because it does not exist<span style="color:#960050;background-color:#1e0010">”</span>
+            Write-Warning “User $name NOT added to group $group_name because it does not exist”
         }
     }
 
-    $add_command = <span style="color:#e6db74">&#34;net localgroup administrators $Global:Domain\$username /add&#34;</span>
-    <span style="color:#66d9ef">foreach</span> ($hostname <span style="color:#66d9ef">in</span> $userObject.local_admin) {
-        echo <span style="color:#e6db74">&#34;Invoke-Command -Computer $hostname -ScriptBlock { $add_command }&#34;</span> | Invoke-Expression
+    $add_command = &quot;net localgroup administrators $Global:Domain\$username /add&quot;
+    foreach ($hostname in $userObject.local_admin) {
+        echo &quot;Invoke-Command -Computer $hostname -ScriptBlock { $add_command }&quot; | Invoke-Expression
     }
 
 }
 
-<span style="color:#66d9ef">function</span> RemoveADUser {
-    <span style="color:#66d9ef">param</span> ([<span style="color:#66d9ef">Parameter</span>(<span style="color:#66d9ef">Mandatory</span>=$true)] $userObject)
+function RemoveADUser {
+    param ([Parameter(Mandatory=$true)] $userObject)
     
     $name = $userObject.name
-    $firstname,$lastname = $name.Split(<span style="color:#e6db74">&#34; &#34;</span>)
+    $firstname,$lastname = $name.Split(&quot; &quot;)
     $username = ($firstname[0] + $lastname).ToLower()
 
-    <span style="color:#66d9ef">if</span>($userObject.kerberoastable){
+    if($userObject.kerberoastable){
         $username = $name
         setspn -D $spn/$username.$Global:Domain $Global:BaseDomain\$username
     }
 
     $SamAccountName = $username
 
-    Remove-ADUser -Identity $SamAccountName -Confirm<span style="color:#960050;background-color:#1e0010">:</span>$false
+    Remove-ADUser -Identity $SamAccountName -Confirm:$false
 }
 
 $json = (Get-Content $JSONFile | ConvertFrom-Json)
 $Global:Domain = $json.domain
-$Global:BaseDomain = $Global:Domain.split(<span style="color:#e6db74">&#34;.&#34;</span>)[0]
+$Global:BaseDomain = $Global:Domain.split(&quot;.&quot;)[0]
 
-<span style="color:#66d9ef">if</span> (<span style="color:#f92672">-not</span> $Revert) {
+if (-not $Revert) {
     
     WeakenPasswordPolicy
     
-    <span style="color:#66d9ef">foreach</span>($group <span style="color:#66d9ef">in</span> $json.groups){
+    foreach($group in $json.groups){
         CreateADGroup $group
     }
-    <span style="color:#66d9ef">foreach</span>($user <span style="color:#66d9ef">in</span> $json.users){
+    foreach($user in $json.users){
         CreateADUser $user
     }
-}<span style="color:#66d9ef">else</span> {
+}else {
     StrengthenPasswordPolicy
 
-    <span style="color:#66d9ef">foreach</span>($group <span style="color:#66d9ef">in</span> $json.groups){
+    foreach($group in $json.groups){
         RemoveADGroup $group
     }
-    <span style="color:#66d9ef">foreach</span>($user <span style="color:#66d9ef">in</span> $json.users){
+    foreach($user in $json.users){
         RemoveADUser $user
     }
     
 }
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;domain&#34;</span>:  <span style="color:#e6db74">&#34;xyz.com&#34;</span>,
     <span style="color:#f92672">&#34;users&#34;</span>:  [
                   {
@@ -1131,11 +1040,102 @@ We then let the tool cook.</p>
 <pre tabindex="0"><code>flag{KINg_Of_F0r3nS1C5} 
 </code></pre>
     </div>
-    <div class="post-footer">
-      
-    </div>
-  </article>
+    <footer class="content__footer"></footer>
 
-    </main>
-  </body>
+            </section>
+
+            <section class="page__aside">
+                <div class="aside__about">
+<div class="aside__about">
+    
+    
+<h1 class="about__title">jigsaw&#39;s blog</h1>
+<p class="about__description">i&rsquo;m zach and I build labs and create ctf challenges</p>
+</div>
+
+
+<ul class="aside__social-links">
+    
+    <li>
+        <a href="https://github.com/zachwong02" rel="me" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="https://www.linkedin.com/in/zach-wong-zhi-zhen-a39724173/" rel="me" aria-label="Linkedin" title="Linkedin"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+</ul>
+</div>
+                <hr>
+                <div class="aside__content">
+    <p>An Active Directory Lab created for an Active Directory Forensics CTF Challenge</p>
+    
+        <p>
+            By jigsaw, 
+            2023-12-12
+        </p>
+    
+
+    
+	    <hr>
+	    On this page:
+	    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#so-what-is-active-directory-ad">So What is Active Directory (AD)?</a></li>
+    <li><a href="#requirements-and-specifications-needed">Requirements and Specifications Needed</a></li>
+    <li><a href="#building-the-environment">Building the Environment</a>
+      <ol>
+        <li><a href="#installing-active-directory">Installing Active Directory</a></li>
+        <li><a href="#setting-up-workstations">Setting Up Workstations</a></li>
+        <li><a href="#creating-users--groups-on-the-domain-controller">Creating Users &amp; Groups on the Domain Controller</a></li>
+        <li><a href="#group-policies">Group Policies</a></li>
+        <li><a href="#creating-workstation-1">Creating Workstation 1</a></li>
+        <li><a href="#creating-workstation-2">Creating Workstation 2</a></li>
+      </ol>
+    </li>
+    <li><a href="#creating-evidence">Creating Evidence</a>
+      <ol>
+        <li><a href="#initial-access">Initial Access</a></li>
+        <li><a href="#privilege-escalation">Privilege Escalation</a></li>
+        <li><a href="#pivoting">Pivoting</a></li>
+        <li><a href="#generating-logs">Generating Logs</a></li>
+      </ol>
+    </li>
+    <li><a href="#acquiring-the-evidence">Acquiring the Evidence</a>
+      <ol>
+        <li><a href="#domain-controller-evidence">Domain Controller Evidence</a></li>
+        <li><a href="#workstation-evidence">Workstation Evidence</a></li>
+      </ol>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ol>
+</nav>
+    
+
+                </div>
+            </section>
+
+            <footer class="page__footer"><p>
+    
+    
+    
+    
+    
+    
+      
+    
+      
+    
+    
+    
+</p>
+<br /><br />
+<p class="copyright"></p>
+<p class="advertisement">Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/joeroe/risotto">risotto</a>.</p>
+</footer>
+
+        </div>
+    </body>
+
 </html>

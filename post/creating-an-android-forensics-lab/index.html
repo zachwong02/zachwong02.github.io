@@ -1,139 +1,58 @@
-<!doctype html>
-<html lang="en-us">
-  <head>
-    <title>Creating an Android Forensics Lab // Zach&#39;s Blog</title>
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.92.2" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Zach Wong" />
-    <meta name="description" content="" />
-    <link rel="stylesheet" href="/css/main.min.a58e9bed6527e990a37775472f2144386fc6ece1b4392c32c803e3ce66b3543a.css" />
+<!DOCTYPE html>
+<html lang="en">
 
+    <head><title>Creating an Android Forensics Lab &ndash; jigsaw</title>
+<meta name="description" content="i&#39;m zach and I build labs and create ctf challenges">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"/>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css" integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<link rel="stylesheet" href="https://zachwong02.github.io/css/palettes/base16-dark.css">
+<link rel="stylesheet" href="https://zachwong02.github.io/css/risotto.css">
+<link rel="stylesheet" href="https://zachwong02.github.io/css/custom.css">
+
+
+<link rel="icon" href="https://zachwong02.github.io/favicon.ico">
+
+
+
+
+
+
+
+</head>
+
+    <body>
+        <div class="page">
+
+            <header class="page__header"><nav class="page__nav main-nav">
+    <ul>
+      <li class="nomarker"><h1 class="page__logo"><a href="https://zachwong02.github.io" class="page__logo-inner">jigsaw</a></h1></li>
     
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Creating an Android Forensics Lab"/>
-<meta name="twitter:description" content=".toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Introduction Installing Android Studio Rooting Your Device Instructions  Automating Root Access Connecting to the Android Device Setting the Time Installing Applications Setting the Android Device&rsquo;s Phone Number Sending Messages Receiving Messages Sending Calls Receiving Calls Transferring Files Extracting Evidence   Conclusion    Introduction Before I start this tutorial/blog/walkthrough on how to build your own Android environment for digital forensics purposes, I have to give some context on how I started this amateur adventure."/>
-
-    <meta property="og:title" content="Creating an Android Forensics Lab" />
-<meta property="og:description" content=".toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Introduction Installing Android Studio Rooting Your Device Instructions  Automating Root Access Connecting to the Android Device Setting the Time Installing Applications Setting the Android Device&rsquo;s Phone Number Sending Messages Receiving Messages Sending Calls Receiving Calls Transferring Files Extracting Evidence   Conclusion    Introduction Before I start this tutorial/blog/walkthrough on how to build your own Android environment for digital forensics purposes, I have to give some context on how I started this amateur adventure." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://zachwong02.github.io/post/creating-an-android-forensics-lab/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2023-09-03T20:27:31+08:00" />
-<meta property="article:modified_time" content="2023-09-03T20:27:31+08:00" />
-
-
-
-  </head>
-  <body>
-    <header class="app-header">
-      <a href="https://zachwong02.github.io"><img class="app-header-avatar" src="/avatar.jpg" alt="Zach Wong" /></a>
-      <span class="app-header-title">Zach&#39;s Blog</span>
-      <nav class="app-header-menu">
-          <a class="app-header-menu-item" href="/">Home</a>
-             | 
-          
-          <a class="app-header-menu-item" href="/tags/">Tags</a>
-             | 
-          
-          <a class="app-header-menu-item" href="/about/">About</a>
-             | 
-          
-          <a class="app-header-menu-item" href="/command-line-templates/">Cheatsheet</a>
-      </nav>
-      <p>i&#39;m zach and I build labs</p>
-      <div class="app-header-social">
-        
-          <a href="https://github.com/zachwong02" target="_blank" rel="noreferrer noopener me">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
-  <title>Github</title>
-  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-</svg>
-          </a>
-        
-          <a href="https://www.linkedin.com/in/zach-wong-zhi-zhen-a39724173" target="_blank" rel="noreferrer noopener me">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
-  <title>Linkedin</title>
-  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
-</svg>
-          </a>
-        
-      </div>
-    </header>
-    <main class="app-container">
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class ="post-title">Creating an Android Forensics Lab</h1>
-      <div class="post-meta">
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
-  <title>calendar</title>
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
-</svg>
-          Sep 3, 2023
-        </div>
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg>
-          11 min read
-        </div>
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
-  <title>tag</title>
-  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line>
-</svg>
-              <a class="tag" href="https://zachwong02.github.io/tags/blue-teaming/">Blue-Teaming</a>
-              <a class="tag" href="https://zachwong02.github.io/tags/lab-creation/">Lab-Creation</a>
-              <a class="tag" href="https://zachwong02.github.io/tags/digital-forensics/">Digital-Forensics</a>
-        </div>
-      </div>
-    </header>
-    <div class="post-content">
-      <style>
-    .toc {
-        margin-top: 10px;
-        display: inline-block;
-        padding: 10px 10px 0 10px;
-        background: #242930;
-    }
-    ul {
-        margin-top: 0;
-        padding-left: 25px;
-        list-style-type: square;
-    }
-</style>
-
-<div class='toc'>
-    <b> Content </b>
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#installing-android-studio">Installing Android Studio</a></li>
-    <li><a href="#rooting-your-device">Rooting Your Device</a></li>
-    <li><a href="#instructions">Instructions</a>
-      <ul>
-        <li><a href="#automating-root-access">Automating Root Access</a></li>
-        <li><a href="#connecting-to-the-android-device">Connecting to the Android Device</a></li>
-        <li><a href="#setting-the-time">Setting the Time</a></li>
-        <li><a href="#installing-applications">Installing Applications</a></li>
-        <li><a href="#setting-the-android-devices-phone-number">Setting the Android Device&rsquo;s Phone Number</a></li>
-        <li><a href="#sending-messages">Sending Messages</a></li>
-        <li><a href="#receiving-messages">Receiving Messages</a></li>
-        <li><a href="#sending-calls">Sending Calls</a></li>
-        <li><a href="#receiving-calls">Receiving Calls</a></li>
-        <li><a href="#transferring-files">Transferring Files</a></li>
-        <li><a href="#extracting-evidence">Extracting Evidence</a></li>
-      </ul>
-    </li>
-    <li><a href="#conclusion">Conclusion</a></li>
-  </ul>
+    
+    <li class="main-nav__item"><a class="nav-main-item" href="https://zachwong02.github.io/tags/" title="">Tags</a></li>
+    
+    <li class="main-nav__item"><a class="nav-main-item active" href="https://zachwong02.github.io/post/" title="Posts">Posts</a></li>
+    
+    </ul>
 </nav>
-</div>
 
-<h2 id="introduction">Introduction</h2>
+</header>
+
+            <section class="page__body">
+    <header class="content__header">
+        <h1>Creating an Android Forensics Lab</h1>
+    </header>
+    <div class="content__body">
+        <h2 id="introduction">Introduction</h2>
 <p>Before I start this tutorial/blog/walkthrough on how to build your own Android environment for digital forensics purposes, I have to give some context on how I started this amateur adventure.</p>
 <p><img src="/images/creating-an-android-forensics-lab/face-1.jpg" alt="uwu"></p>
 <p>First of all, I am a challenge creator for my university&rsquo;s cybersecurity committee and there was a CTF competition held there on the 2nd of September 2023. So, I took it upon myself to make something unique for the participants and myself&hellip; And oh boy, was it unique and difficult to do for someone like me. The full code can be found <a href="https://github.com/zachwong02/android-forensics-lab.git">here</a>.</p>
@@ -659,13 +578,94 @@ adb pull /sdcard/Download/android_image.tar.gz
 
 <h2 id="conclusion">Conclusion</h2>
 <p>In conclusion, is this cool? Yes. Is it realistic? Well&hellip; I can&rsquo;t say. However, it is very good for making CTF challenges and I will be using it in the future. Also, there is a con of making challenges this way. Through <code>ALeapp</code>, we can identify the host machine. With a MacBook, users will also be able to see information about your MacBook through the <code>._MACOSX</code> and <code>.DS_STORE</code> folders. So, bottom point being, make sure your laptop is clean. <strong>*wink*</strong></p>
-
     </div>
-    <div class="post-footer">
+    <footer class="content__footer"></footer>
+
+            </section>
+
+            <section class="page__aside">
+                <div class="aside__about">
+<div class="aside__about">
+    
+    
+<h1 class="about__title">jigsaw&#39;s blog</h1>
+<p class="about__description">i&rsquo;m zach and I build labs and create ctf challenges</p>
+</div>
+
+
+<ul class="aside__social-links">
+    
+    <li>
+        <a href="https://github.com/zachwong02" rel="me" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+    <li>
+        <a href="https://www.linkedin.com/in/zach-wong-zhi-zhen-a39724173/" rel="me" aria-label="Linkedin" title="Linkedin"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>&nbsp;
+    </li>
+    
+</ul>
+</div>
+                <hr>
+                <div class="aside__content">
+    <p>An Android Forensics Lab for Mobile Forensics CTF Challenges</p>
+    
+        <p>
+            By jigsaw, 
+            2023-09-03
+        </p>
+    
+
+    
+	    <hr>
+	    On this page:
+	    <nav id="TableOfContents">
+  <ol>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#installing-android-studio">Installing Android Studio</a></li>
+    <li><a href="#rooting-your-device">Rooting Your Device</a></li>
+    <li><a href="#instructions">Instructions</a>
+      <ol>
+        <li><a href="#automating-root-access">Automating Root Access</a></li>
+        <li><a href="#connecting-to-the-android-device">Connecting to the Android Device</a></li>
+        <li><a href="#setting-the-time">Setting the Time</a></li>
+        <li><a href="#installing-applications">Installing Applications</a></li>
+        <li><a href="#setting-the-android-devices-phone-number">Setting the Android Device&rsquo;s Phone Number</a></li>
+        <li><a href="#sending-messages">Sending Messages</a></li>
+        <li><a href="#receiving-messages">Receiving Messages</a></li>
+        <li><a href="#sending-calls">Sending Calls</a></li>
+        <li><a href="#receiving-calls">Receiving Calls</a></li>
+        <li><a href="#transferring-files">Transferring Files</a></li>
+        <li><a href="#extracting-evidence">Extracting Evidence</a></li>
+      </ol>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ol>
+</nav>
+    
+
+                </div>
+            </section>
+
+            <footer class="page__footer"><p>
+    
+    
+    
+    
+    
+    
       
-    </div>
-  </article>
+    
+      
+    
+    
+    
+</p>
+<br /><br />
+<p class="copyright"></p>
+<p class="advertisement">Powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/joeroe/risotto">risotto</a>.</p>
+</footer>
 
-    </main>
-  </body>
+        </div>
+    </body>
+
 </html>

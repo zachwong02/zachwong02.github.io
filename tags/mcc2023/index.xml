@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MCC2023 on Zach&#39;s Blog</title>
+    <title>MCC2023 on jigsaw</title>
     <link>https://zachwong02.github.io/tags/mcc2023/</link>
-    <description>Recent content in MCC2023 on Zach&#39;s Blog</description>
+    <description>Recent content in MCC2023 on jigsaw</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <lastBuildDate>Wed, 20 Dec 2023 03:51:02 +0800</lastBuildDate><atom:link href="https://zachwong02.github.io/tags/mcc2023/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My Experience in Malaysia Cybersecurity Camp 2023</title>
@@ -12,7 +13,7 @@
       <pubDate>Wed, 20 Dec 2023 03:51:02 +0800</pubDate>
       
       <guid>https://zachwong02.github.io/post/mcc2023/</guid>
-      <description>.toc { margin-top: 10px; display: inline-block; padding: 10px 10px 0 10px; background: #242930; } ul { margin-top: 0; padding-left: 25px; list-style-type: square; }   Content   Introduction Registering for MCC2023 The Interview for MCC2023 Day 1 - The Journey Begins Day 2 - King of Forensics Meets the God of Forensics Day 3 - Purple Teamer is Red Teaming Day 4 - The Journey Has Just Begun    Introduction So, I managed to participate in Malaysia’s Cybersecurity Camp (MCC) 2023!</description>
+      <description></description>
     </item>
     
   </channel>
