@@ -6,7 +6,18 @@
     <description>Recent content in Posts on jigsaw</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 22 Dec 2023 21:32:20 +0800</lastBuildDate><atom:link href="https://zachwong02.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Apr 2024 21:54:38 +0800</lastBuildDate><atom:link href="https://zachwong02.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Experience at Black Hat Asia 2024 as a Student</title>
+      <link>https://zachwong02.github.io/post/black-hat-asia-2024/</link>
+      <pubDate>Sat, 20 Apr 2024 21:54:38 +0800</pubDate>
+      
+      <guid>https://zachwong02.github.io/post/black-hat-asia-2024/</guid>
+      <description>Introduction So, Black Hat Asia 2024! A big conference filled with a lot of cybersecurity booths and talks and I might add that the price of the ticket was very… very… expensive. Fortunately, Black Hat does offer sponsorships for students! With all my assignments and final year project not done, I irresponsibly signed up for it!
+And guess what? I got it!
+Double Sponsorship Well the reason how I discovered I was sponsored was because Mr Yapp from Malaysia Cybersecurity Camp (MCC) asked us (us being MCC peeps) whether we got the email for it and me being a person who never checks my email went “I should check my emails more often”.</description>
+    </item>
+    
     <item>
       <title>Siber Siaga 2023 Writeup [Malbot]</title>
       <link>https://zachwong02.github.io/post/malware-finds-a-way/</link>
