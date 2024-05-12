@@ -2,28 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://zachwong02.github.io/tags/blue-teaming/</loc>
+    <lastmod>2024-05-12T18:12:01+08:00</lastmod>
+  </url><url>
+    <loc>https://zachwong02.github.io/tags/challenge-creation/</loc>
+    <lastmod>2024-05-12T18:12:01+08:00</lastmod>
+  </url><url>
+    <loc>https://zachwong02.github.io/post/decrypting-cobalt-strike-network-traffic/</loc>
+    <lastmod>2024-05-12T18:12:01+08:00</lastmod>
+  </url><url>
+    <loc>https://zachwong02.github.io/tags/digital-forensics/</loc>
+    <lastmod>2024-05-12T18:12:01+08:00</lastmod>
+  </url><url>
+    <loc>https://zachwong02.github.io/tags/lab-creation/</loc>
+    <lastmod>2024-05-12T18:12:01+08:00</lastmod>
+  </url><url>
+    <loc>https://zachwong02.github.io/post/</loc>
+    <lastmod>2024-05-12T18:12:01+08:00</lastmod>
+  </url><url>
+    <loc>https://zachwong02.github.io/tags/purple-teaming/</loc>
+    <lastmod>2024-05-12T18:12:01+08:00</lastmod>
+  </url><url>
+    <loc>https://zachwong02.github.io/tags/</loc>
+    <lastmod>2024-05-12T18:12:01+08:00</lastmod>
+  </url><url>
+    <loc>https://zachwong02.github.io/tags/writeup/</loc>
+    <lastmod>2024-05-12T18:12:01+08:00</lastmod>
+  </url><url>
     <loc>https://zachwong02.github.io/tags/black-hat-asia-2024/</loc>
     <lastmod>2024-04-20T21:54:38+08:00</lastmod>
   </url><url>
     <loc>https://zachwong02.github.io/post/black-hat-asia-2024/</loc>
     <lastmod>2024-04-20T21:54:38+08:00</lastmod>
   </url><url>
-    <loc>https://zachwong02.github.io/post/</loc>
-    <lastmod>2024-04-20T21:54:38+08:00</lastmod>
-  </url><url>
-    <loc>https://zachwong02.github.io/tags/</loc>
-    <lastmod>2024-04-20T21:54:38+08:00</lastmod>
-  </url><url>
-    <loc>https://zachwong02.github.io/tags/blue-teaming/</loc>
-    <lastmod>2023-12-22T21:32:20+08:00</lastmod>
-  </url><url>
-    <loc>https://zachwong02.github.io/tags/digital-forensics/</loc>
-    <lastmod>2023-12-22T21:32:20+08:00</lastmod>
-  </url><url>
     <loc>https://zachwong02.github.io/post/malware-finds-a-way/</loc>
-    <lastmod>2023-12-22T21:32:20+08:00</lastmod>
-  </url><url>
-    <loc>https://zachwong02.github.io/tags/writeup/</loc>
     <lastmod>2023-12-22T21:32:20+08:00</lastmod>
   </url><url>
     <loc>https://zachwong02.github.io/tags/mcc2023/</loc>
@@ -38,16 +50,7 @@
     <loc>https://zachwong02.github.io/post/wgmy2023-compromised/</loc>
     <lastmod>2023-12-17T02:22:12+08:00</lastmod>
   </url><url>
-    <loc>https://zachwong02.github.io/tags/challenge-creation/</loc>
-    <lastmod>2023-12-12T21:45:00+08:00</lastmod>
-  </url><url>
     <loc>https://zachwong02.github.io/post/creating-my-first-ad-forensics-challenge/</loc>
-    <lastmod>2023-12-12T21:45:00+08:00</lastmod>
-  </url><url>
-    <loc>https://zachwong02.github.io/tags/lab-creation/</loc>
-    <lastmod>2023-12-12T21:45:00+08:00</lastmod>
-  </url><url>
-    <loc>https://zachwong02.github.io/tags/purple-teaming/</loc>
     <lastmod>2023-12-12T21:45:00+08:00</lastmod>
   </url><url>
     <loc>https://zachwong02.github.io/</loc>

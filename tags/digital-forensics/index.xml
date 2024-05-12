@@ -6,7 +6,16 @@
     <description>Recent content in Digital-Forensics on jigsaw</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 22 Dec 2023 21:32:20 +0800</lastBuildDate><atom:link href="https://zachwong02.github.io/tags/digital-forensics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 May 2024 18:12:01 +0800</lastBuildDate><atom:link href="https://zachwong02.github.io/tags/digital-forensics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Decrypting Cobalt Strike Network Traffic</title>
+      <link>https://zachwong02.github.io/post/decrypting-cobalt-strike-network-traffic/</link>
+      <pubDate>Sun, 12 May 2024 18:12:01 +0800</pubDate>
+      
+      <guid>https://zachwong02.github.io/post/decrypting-cobalt-strike-network-traffic/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Siber Siaga 2023 Writeup [Malbot]</title>
       <link>https://zachwong02.github.io/post/malware-finds-a-way/</link>
