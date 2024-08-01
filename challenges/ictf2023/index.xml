@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Internal CTF 2023 Challenges on jigsaw</title>
+    <link>https://zachwong02.github.io/challenges/ictf2023/</link>
+    <description>Recent content in Internal CTF 2023 Challenges on jigsaw</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://zachwong02.github.io/challenges/ictf2023/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Paper Trails</title>
+      <link>https://zachwong02.github.io/challenges/ictf2023/paper-trails/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zachwong02.github.io/challenges/ictf2023/paper-trails/</guid>
+      <description>Attachments: File to Download
+Challenge Description: A file was recovered from a crime scene, nobody knows what kind of file this is… Can you find out what this file contains?</description>
+    </item>
+    
+    <item>
+      <title>Robbing Youtube</title>
+      <link>https://zachwong02.github.io/challenges/ictf2023/robbing-youtube/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zachwong02.github.io/challenges/ictf2023/robbing-youtube/</guid>
+      <description>Challenge Description: Steal the flag from YouTube https://youtu.be/lZtQ0psqDsw</description>
+    </item>
+    
+    <item>
+      <title>SCP</title>
+      <link>https://zachwong02.github.io/challenges/ictf2023/scp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zachwong02.github.io/challenges/ictf2023/scp/</guid>
+      <description>Attachments: File to Download
+Challenge Description: Read the log file and investigate what happened to Site-[REDACTED].</description>
+    </item>
+    
+    <item>
+      <title>Shrek</title>
+      <link>https://zachwong02.github.io/challenges/ictf2023/shrek/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zachwong02.github.io/challenges/ictf2023/shrek/</guid>
+      <description>Attachments: File to Download Challenge Description: Shrek has hidden his secret with some of his closest friends, can you find his secret?</description>
+    </item>
+    
+    <item>
+      <title>What Day Is It</title>
+      <link>https://zachwong02.github.io/challenges/ictf2023/what-day-is-it/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zachwong02.github.io/challenges/ictf2023/what-day-is-it/</guid>
+      <description>Attachments: File to Download Challenge Description: Today is a funny day for pranks don’t you think so? Well, here’s a free flag for you!</description>
+    </item>
+    
+  </channel>
+</rss>

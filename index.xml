@@ -9,19 +9,19 @@
     <lastBuildDate>Fri, 01 Dec 2023 23:42:38 +0800</lastBuildDate><atom:link href="https://zachwong02.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My Experience at Off-By-One-2024</title>
-      <link>https://zachwong02.github.io/post/off-by-one-2024/</link>
+      <link>https://zachwong02.github.io/events/off-by-one-2024/</link>
       <pubDate>Mon, 01 Jul 2024 16:46:22 +0800</pubDate>
       
-      <guid>https://zachwong02.github.io/post/off-by-one-2024/</guid>
+      <guid>https://zachwong02.github.io/events/off-by-one-2024/</guid>
       <description></description>
     </item>
     
     <item>
       <title>My Experience at SINCON 2024</title>
-      <link>https://zachwong02.github.io/post/sincon-2024/</link>
+      <link>https://zachwong02.github.io/events/sincon-2024/</link>
       <pubDate>Tue, 28 May 2024 23:46:33 +0800</pubDate>
       
-      <guid>https://zachwong02.github.io/post/sincon-2024/</guid>
+      <guid>https://zachwong02.github.io/events/sincon-2024/</guid>
       <description></description>
     </item>
     
@@ -36,10 +36,10 @@
     
     <item>
       <title>My Experience at Black Hat Asia 2024 as a Student</title>
-      <link>https://zachwong02.github.io/post/black-hat-asia-2024/</link>
+      <link>https://zachwong02.github.io/events/black-hat-asia-2024/</link>
       <pubDate>Sat, 20 Apr 2024 21:54:38 +0800</pubDate>
       
-      <guid>https://zachwong02.github.io/post/black-hat-asia-2024/</guid>
+      <guid>https://zachwong02.github.io/events/black-hat-asia-2024/</guid>
       <description></description>
     </item>
     
@@ -54,10 +54,10 @@
     
     <item>
       <title>My Experience in Malaysia Cybersecurity Camp 2023</title>
-      <link>https://zachwong02.github.io/post/mcc2023/</link>
+      <link>https://zachwong02.github.io/events/mcc2023/</link>
       <pubDate>Wed, 20 Dec 2023 03:51:02 +0800</pubDate>
       
-      <guid>https://zachwong02.github.io/post/mcc2023/</guid>
+      <guid>https://zachwong02.github.io/events/mcc2023/</guid>
       <description></description>
     </item>
     
@@ -95,6 +95,151 @@
       
       <guid>https://zachwong02.github.io/post/creating-an-android-forensics-lab/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>CRACKSTORE</title>
+      <link>https://zachwong02.github.io/challenges/aboh2023/crackstore/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zachwong02.github.io/challenges/aboh2023/crackstore/</guid>
+      <description>Attachments: File to Download
+Challenge Description: I recently made a backup of my “Windows Server” but I have forgotten the password.</description>
+    </item>
+    
+    <item>
+      <title>Digging Up Artifacts</title>
+      <link>https://zachwong02.github.io/challenges/ictf2024/digging-up-artifacts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zachwong02.github.io/challenges/ictf2024/digging-up-artifacts/</guid>
+      <description>Attachments: File to Download</description>
+    </item>
+    
+    <item>
+      <title>FSEC-SS Interview Challenge</title>
+      <link>https://zachwong02.github.io/challenges/fsec-ss/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zachwong02.github.io/challenges/fsec-ss/</guid>
+      <description>This was the challenge I made to enter my university&amp;rsquo;s cybersecurity club, at that time I just learned about the Log4J vulnerability and wanted to make it the center of my challenge. The flag format is FSEC{ }
+File to Download</description>
+    </item>
+    
+    <item>
+      <title>Fur Elise</title>
+      <link>https://zachwong02.github.io/challenges/aboh2023/fur-elise/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zachwong02.github.io/challenges/aboh2023/fur-elise/</guid>
+      <description>Attachments: File to Download
+Challenge Description: Beethoven was quite petty lol: https://www.chosic.com/why-is-beethoven-fur-elise-so-popular-and-who-was-elise/</description>
+    </item>
+    
+    <item>
+      <title>Paper Trails</title>
+      <link>https://zachwong02.github.io/challenges/ictf2023/paper-trails/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zachwong02.github.io/challenges/ictf2023/paper-trails/</guid>
+      <description>Attachments: File to Download
+Challenge Description: A file was recovered from a crime scene, nobody knows what kind of file this is… Can you find out what this file contains?</description>
+    </item>
+    
+    <item>
+      <title>Robbing Youtube</title>
+      <link>https://zachwong02.github.io/challenges/ictf2023/robbing-youtube/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zachwong02.github.io/challenges/ictf2023/robbing-youtube/</guid>
+      <description>Challenge Description: Steal the flag from YouTube https://youtu.be/lZtQ0psqDsw</description>
+    </item>
+    
+    <item>
+      <title>SCP</title>
+      <link>https://zachwong02.github.io/challenges/ictf2023/scp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zachwong02.github.io/challenges/ictf2023/scp/</guid>
+      <description>Attachments: File to Download
+Challenge Description: Read the log file and investigate what happened to Site-[REDACTED].</description>
+    </item>
+    
+    <item>
+      <title>SCP 2.0</title>
+      <link>https://zachwong02.github.io/challenges/aboh2023/scp2_0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zachwong02.github.io/challenges/aboh2023/scp2_0/</guid>
+      <description>Attachments: File to Download Password to ZIP file: D!D_Y0U_try_scp1.0
+Challenge Description: Site-19 has been breached by the Chaos Insurgency following the breach of Site-[REDACTED]. All personnel is required to follow Procedure-15A.</description>
+    </item>
+    
+    <item>
+      <title>SCP 3.0</title>
+      <link>https://zachwong02.github.io/challenges/ictf2024/scp3_0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zachwong02.github.io/challenges/ictf2024/scp3_0/</guid>
+      <description>Attachments: File to Download
+Challenge Description: The password is the flag. e.g. ICTF{password}</description>
+    </item>
+    
+    <item>
+      <title>SCP 4.0</title>
+      <link>https://zachwong02.github.io/challenges/ictf2024/scp4_0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zachwong02.github.io/challenges/ictf2024/scp4_0/</guid>
+      <description>Attachments: File to Download</description>
+    </item>
+    
+    <item>
+      <title>Shrek</title>
+      <link>https://zachwong02.github.io/challenges/ictf2023/shrek/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zachwong02.github.io/challenges/ictf2023/shrek/</guid>
+      <description>Attachments: File to Download Challenge Description: Shrek has hidden his secret with some of his closest friends, can you find his secret?</description>
+    </item>
+    
+    <item>
+      <title>Spy</title>
+      <link>https://zachwong02.github.io/challenges/ictf2024/spy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zachwong02.github.io/challenges/ictf2024/spy/</guid>
+      <description>Attachments: File to Download</description>
+    </item>
+    
+    <item>
+      <title>The Intern</title>
+      <link>https://zachwong02.github.io/challenges/aboh2023/the-intern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zachwong02.github.io/challenges/aboh2023/the-intern/</guid>
+      <description>Attachments: File to Download Password to ZIP file: @_nEW_k1ND_Of_Foren$ICS
+Challenge Description: XYZ&amp;rsquo;s new intern just quit his job after one month. Hold up, wait a minute, something ain&amp;rsquo;t right here&amp;hellip; My AD has been compromised&amp;hellip;
+author&amp;rsquo;s note: the 2 password protected rar files are part of the challenge.</description>
+    </item>
+    
+    <item>
+      <title>UWU</title>
+      <link>https://zachwong02.github.io/challenges/aboh2023/uwu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zachwong02.github.io/challenges/aboh2023/uwu/</guid>
+      <description>Attachments: File to Download Password to ZIP file: ARE_you_r3@dY_4_@Nim3
+Challenge Description: I love Naruto so much I download everything about it!</description>
+    </item>
+    
+    <item>
+      <title>What Day Is It</title>
+      <link>https://zachwong02.github.io/challenges/ictf2023/what-day-is-it/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zachwong02.github.io/challenges/ictf2023/what-day-is-it/</guid>
+      <description>Attachments: File to Download Challenge Description: Today is a funny day for pranks don’t you think so? Well, here’s a free flag for you!</description>
     </item>
     
   </channel>

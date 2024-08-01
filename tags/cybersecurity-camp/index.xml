@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cybersecurity-Camp on jigsaw</title>
+    <link>https://zachwong02.github.io/tags/cybersecurity-camp/</link>
+    <description>Recent content in Cybersecurity-Camp on jigsaw</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 20 Dec 2023 03:51:02 +0800</lastBuildDate><atom:link href="https://zachwong02.github.io/tags/cybersecurity-camp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Experience in Malaysia Cybersecurity Camp 2023</title>
+      <link>https://zachwong02.github.io/events/mcc2023/</link>
+      <pubDate>Wed, 20 Dec 2023 03:51:02 +0800</pubDate>
+      
+      <guid>https://zachwong02.github.io/events/mcc2023/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

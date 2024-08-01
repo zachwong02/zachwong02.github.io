@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Red-Teaming on jigsaw</title>
+    <link>https://zachwong02.github.io/tags/red-teaming/</link>
+    <description>Recent content in Red-Teaming on jigsaw</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 12 May 2024 18:12:01 +0800</lastBuildDate><atom:link href="https://zachwong02.github.io/tags/red-teaming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Decrypting Cobalt Strike Network Traffic</title>
+      <link>https://zachwong02.github.io/post/decrypting-cobalt-strike-network-traffic/</link>
+      <pubDate>Sun, 12 May 2024 18:12:01 +0800</pubDate>
+      
+      <guid>https://zachwong02.github.io/post/decrypting-cobalt-strike-network-traffic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Creating My First AD Forensics Challenge</title>
+      <link>https://zachwong02.github.io/post/creating-my-first-ad-forensics-challenge/</link>
+      <pubDate>Tue, 12 Dec 2023 21:45:00 +0800</pubDate>
+      
+      <guid>https://zachwong02.github.io/post/creating-my-first-ad-forensics-challenge/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

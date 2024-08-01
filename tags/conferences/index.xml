@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Conferences on jigsaw</title>
+    <link>https://zachwong02.github.io/tags/conferences/</link>
+    <description>Recent content in Conferences on jigsaw</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Jul 2024 16:46:22 +0800</lastBuildDate><atom:link href="https://zachwong02.github.io/tags/conferences/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Experience at Off-By-One-2024</title>
+      <link>https://zachwong02.github.io/events/off-by-one-2024/</link>
+      <pubDate>Mon, 01 Jul 2024 16:46:22 +0800</pubDate>
+      
+      <guid>https://zachwong02.github.io/events/off-by-one-2024/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>My Experience at SINCON 2024</title>
+      <link>https://zachwong02.github.io/events/sincon-2024/</link>
+      <pubDate>Tue, 28 May 2024 23:46:33 +0800</pubDate>
+      
+      <guid>https://zachwong02.github.io/events/sincon-2024/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>My Experience at Black Hat Asia 2024 as a Student</title>
+      <link>https://zachwong02.github.io/events/black-hat-asia-2024/</link>
+      <pubDate>Sat, 20 Apr 2024 21:54:38 +0800</pubDate>
+      
+      <guid>https://zachwong02.github.io/events/black-hat-asia-2024/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

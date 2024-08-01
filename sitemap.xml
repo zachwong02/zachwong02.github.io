@@ -2,22 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://zachwong02.github.io/post/off-by-one-2024/</loc>
+    <loc>https://zachwong02.github.io/tags/conferences/</loc>
     <lastmod>2024-07-01T16:46:22+08:00</lastmod>
   </url><url>
-    <loc>https://zachwong02.github.io/tags/off-by-one-2024/</loc>
+    <loc>https://zachwong02.github.io/events/</loc>
     <lastmod>2024-07-01T16:46:22+08:00</lastmod>
   </url><url>
-    <loc>https://zachwong02.github.io/post/</loc>
+    <loc>https://zachwong02.github.io/events/off-by-one-2024/</loc>
     <lastmod>2024-07-01T16:46:22+08:00</lastmod>
   </url><url>
     <loc>https://zachwong02.github.io/tags/</loc>
     <lastmod>2024-07-01T16:46:22+08:00</lastmod>
   </url><url>
-    <loc>https://zachwong02.github.io/post/sincon-2024/</loc>
-    <lastmod>2024-05-28T23:46:33+08:00</lastmod>
-  </url><url>
-    <loc>https://zachwong02.github.io/tags/sincon-2024/</loc>
+    <loc>https://zachwong02.github.io/events/sincon-2024/</loc>
     <lastmod>2024-05-28T23:46:33+08:00</lastmod>
   </url><url>
     <loc>https://zachwong02.github.io/tags/blue-teaming/</loc>
@@ -29,31 +26,37 @@
     <loc>https://zachwong02.github.io/post/decrypting-cobalt-strike-network-traffic/</loc>
     <lastmod>2024-05-12T18:12:01+08:00</lastmod>
   </url><url>
-    <loc>https://zachwong02.github.io/tags/digital-forensics/</loc>
+    <loc>https://zachwong02.github.io/tags/dfir/</loc>
     <lastmod>2024-05-12T18:12:01+08:00</lastmod>
   </url><url>
     <loc>https://zachwong02.github.io/tags/lab-creation/</loc>
     <lastmod>2024-05-12T18:12:01+08:00</lastmod>
   </url><url>
+    <loc>https://zachwong02.github.io/post/</loc>
+    <lastmod>2024-05-12T18:12:01+08:00</lastmod>
+  </url><url>
     <loc>https://zachwong02.github.io/tags/purple-teaming/</loc>
     <lastmod>2024-05-12T18:12:01+08:00</lastmod>
   </url><url>
-    <loc>https://zachwong02.github.io/tags/writeup/</loc>
+    <loc>https://zachwong02.github.io/tags/red-teaming/</loc>
     <lastmod>2024-05-12T18:12:01+08:00</lastmod>
   </url><url>
-    <loc>https://zachwong02.github.io/tags/black-hat-asia-2024/</loc>
+    <loc>https://zachwong02.github.io/events/black-hat-asia-2024/</loc>
     <lastmod>2024-04-20T21:54:38+08:00</lastmod>
   </url><url>
-    <loc>https://zachwong02.github.io/post/black-hat-asia-2024/</loc>
-    <lastmod>2024-04-20T21:54:38+08:00</lastmod>
+    <loc>https://zachwong02.github.io/tags/malware-analysis/</loc>
+    <lastmod>2023-12-22T21:32:20+08:00</lastmod>
   </url><url>
     <loc>https://zachwong02.github.io/post/malware-finds-a-way/</loc>
     <lastmod>2023-12-22T21:32:20+08:00</lastmod>
   </url><url>
-    <loc>https://zachwong02.github.io/tags/mcc2023/</loc>
+    <loc>https://zachwong02.github.io/tags/writeup/</loc>
+    <lastmod>2023-12-22T21:32:20+08:00</lastmod>
+  </url><url>
+    <loc>https://zachwong02.github.io/tags/cybersecurity-camp/</loc>
     <lastmod>2023-12-20T03:51:02+08:00</lastmod>
   </url><url>
-    <loc>https://zachwong02.github.io/post/mcc2023/</loc>
+    <loc>https://zachwong02.github.io/events/mcc2023/</loc>
     <lastmod>2023-12-20T03:51:02+08:00</lastmod>
   </url><url>
     <loc>https://zachwong02.github.io/post/wgmy2023-seeyou/</loc>
@@ -70,5 +73,43 @@
   </url><url>
     <loc>https://zachwong02.github.io/post/creating-an-android-forensics-lab/</loc>
     <lastmod>2023-09-03T20:27:31+08:00</lastmod>
+  </url><url>
+    <loc>https://zachwong02.github.io/challenges/aboh2023/</loc>
+  </url><url>
+    <loc>https://zachwong02.github.io/challenges/</loc>
+  </url><url>
+    <loc>https://zachwong02.github.io/challenges/aboh2023/crackstore/</loc>
+  </url><url>
+    <loc>https://zachwong02.github.io/challenges/ictf2024/digging-up-artifacts/</loc>
+  </url><url>
+    <loc>https://zachwong02.github.io/challenges/fsec-ss/</loc>
+  </url><url>
+    <loc>https://zachwong02.github.io/challenges/aboh2023/fur-elise/</loc>
+  </url><url>
+    <loc>https://zachwong02.github.io/challenges/ictf2023/</loc>
+  </url><url>
+    <loc>https://zachwong02.github.io/challenges/ictf2024/</loc>
+  </url><url>
+    <loc>https://zachwong02.github.io/challenges/ictf2023/paper-trails/</loc>
+  </url><url>
+    <loc>https://zachwong02.github.io/challenges/ictf2023/robbing-youtube/</loc>
+  </url><url>
+    <loc>https://zachwong02.github.io/challenges/ictf2023/scp/</loc>
+  </url><url>
+    <loc>https://zachwong02.github.io/challenges/aboh2023/scp2_0/</loc>
+  </url><url>
+    <loc>https://zachwong02.github.io/challenges/ictf2024/scp3_0/</loc>
+  </url><url>
+    <loc>https://zachwong02.github.io/challenges/ictf2024/scp4_0/</loc>
+  </url><url>
+    <loc>https://zachwong02.github.io/challenges/ictf2023/shrek/</loc>
+  </url><url>
+    <loc>https://zachwong02.github.io/challenges/ictf2024/spy/</loc>
+  </url><url>
+    <loc>https://zachwong02.github.io/challenges/aboh2023/the-intern/</loc>
+  </url><url>
+    <loc>https://zachwong02.github.io/challenges/aboh2023/uwu/</loc>
+  </url><url>
+    <loc>https://zachwong02.github.io/challenges/ictf2023/what-day-is-it/</loc>
   </url>
 </urlset>
