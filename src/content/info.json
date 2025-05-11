@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "icon": {
+      "type": "lucide",
+      "name": "bug"
+    },
+    "text": "Red Teamer"
+  },
+  {
+    "id": 2,
+    "icon": {
+      "type": "lucide",
+      "name": "shield"
+    },
+    "type": "lucide",
+    "text": "Blue Teamer"
+  },
+  {
+    "id": 3,
+    "icon": {
+      "type": "lucide",
+      "name": "search"
+    },
+    "type": "lucide",
+    "text": "Malware Analyst"
+  }
+]

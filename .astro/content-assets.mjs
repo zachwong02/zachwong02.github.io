@@ -1,0 +1,8 @@
+
+import __ASTRO_IMAGE_IMPORT_catzh from "../assets/blackhat-asia-2024/featured.png?astroContentImageFlag=&importer=src%2Fcontent%2Fposts%2Fblackhat-asia-2024.mdx";
+import __ASTRO_IMAGE_IMPORT_Z27AH1I from "../assets/decrypting-cobalt-strike-traffic/featured.png?astroContentImageFlag=&importer=src%2Fcontent%2Fposts%2Fdecrypting-cobalt-strike-traffic.mdx";
+import __ASTRO_IMAGE_IMPORT_ZpoHgj from "../assets/mcc2023/featured.png?astroContentImageFlag=&importer=src%2Fcontent%2Fposts%2Fmcc2023.mdx";
+import __ASTRO_IMAGE_IMPORT_Z1Xpnyt from "../assets/recreating-an-apt-attack/featured.png?astroContentImageFlag=&importer=src%2Fcontent%2Fposts%2Frecreating-an-apt-attack.mdx";
+import __ASTRO_IMAGE_IMPORT_Z1OnEeT from "../assets/sincon-2024/featured.png?astroContentImageFlag=&importer=src%2Fcontent%2Fposts%2Fsincon-2024.mdx";
+export default new Map([["../assets/blackhat-asia-2024/featured.png?astroContentImageFlag=&importer=src%2Fcontent%2Fposts%2Fblackhat-asia-2024.mdx", __ASTRO_IMAGE_IMPORT_catzh], ["../assets/decrypting-cobalt-strike-traffic/featured.png?astroContentImageFlag=&importer=src%2Fcontent%2Fposts%2Fdecrypting-cobalt-strike-traffic.mdx", __ASTRO_IMAGE_IMPORT_Z27AH1I], ["../assets/mcc2023/featured.png?astroContentImageFlag=&importer=src%2Fcontent%2Fposts%2Fmcc2023.mdx", __ASTRO_IMAGE_IMPORT_ZpoHgj], ["../assets/recreating-an-apt-attack/featured.png?astroContentImageFlag=&importer=src%2Fcontent%2Fposts%2Frecreating-an-apt-attack.mdx", __ASTRO_IMAGE_IMPORT_Z1Xpnyt], ["../assets/sincon-2024/featured.png?astroContentImageFlag=&importer=src%2Fcontent%2Fposts%2Fsincon-2024.mdx", __ASTRO_IMAGE_IMPORT_Z1OnEeT]]);
+		
