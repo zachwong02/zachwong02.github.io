@@ -3,5 +3,15 @@
     "id": 1,
     "certificate": "Offensive Security Certified Professional (OSCP)",
     "issued": "Issued On: October 11, 2024"
+  },
+  {
+    "id": 2,
+    "certificate": "HackTheBox Certified Defensive Security Analyst (CDSA)",
+    "issued": "Issued On: November 11, 2025"
+  },
+  {
+    "id": 3,
+    "certificate": "HackTheBox Certified Offensive AI Expert (COAE)",
+    "issued": "Issued On: September 18, 2026"
   }
 ]

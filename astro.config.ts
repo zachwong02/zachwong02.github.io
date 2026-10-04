@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-
+import mermaid from 'astro-mermaid';
 import expressiveCode from 'astro-expressive-code';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';

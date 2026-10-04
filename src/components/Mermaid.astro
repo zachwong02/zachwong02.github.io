@@ -1,0 +1,63 @@
+---
+interface Props { code: string; }
+const { code } = Astro.props;
+---
+<figure class="mermaid-diagram" data-mermaid={code}>
+  <div class="mermaid-loading">Loading diagram…</div>
+</figure>
+
+<script>
+  import mermaid from 'mermaid';
+
+  mermaid.initialize({ startOnLoad: false, theme: 'dark' });
+
+  async function renderAll() {
+    const nodes = document.querySelectorAll<HTMLElement>('.mermaid-diagram[data-mermaid]');
+    await Promise.all([...nodes].map(async (el, i) => {
+      const def = el.dataset.mermaid;
+      if (!def) return;
+      try {
+        const { svg } = await mermaid.render(`mmd-${i}-${Date.now()}`, def);
+        el.innerHTML = svg;
+      } catch (e) {
+        el.innerHTML = `<pre class="mermaid-error">${(e as Error).message}</pre>`;
+      }
+    }));
+  }
+
+  renderAll();
+</script>
+
+<style>
+  .mermaid-diagram {
+    background: #1a1a1a;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #2e2e2e;
+    margin: 1.5rem 0;
+    text-align: center;
+    overflow-x: auto;
+  }
+
+  .mermaid-diagram svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .mermaid-loading {
+    color: #888;
+    font-size: 0.9rem;
+    padding: 2rem 0;
+  }
+
+  .mermaid-error {
+    background: #2a1a1a;
+    color: #ff9c9c;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: left;
+    font-size: 0.85rem;
+    white-space: pre-wrap;
+    overflow-x: auto;
+  }
+</style>

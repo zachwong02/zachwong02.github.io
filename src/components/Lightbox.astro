@@ -1,0 +1,103 @@
+---
+// Include once in your shared Layout.
+---
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="lightbox-close" aria-label="Close fullscreen">×</button>
+  <div class="lightbox-content"></div>
+</div>
+
+<script>
+  // Adjust the image selector to match your content wrapper (see notes).
+  const SELECTOR = '.mermaid-diagram svg, article img';
+
+  if (!(window as any).__lightboxInit) {
+    (window as any).__lightboxInit = true;
+
+    const lb = document.getElementById('lightbox')!;
+    const content = lb.querySelector('.lightbox-content') as HTMLElement;
+    const closeBtn = lb.querySelector('.lightbox-close') as HTMLElement;
+
+function open(node: Element) {
+  const clone = node.cloneNode(true) as SVGElement | HTMLImageElement;
+
+  if (clone instanceof SVGElement) {
+    clone.removeAttribute('width');
+    clone.removeAttribute('height');
+    clone.removeAttribute('style');                 // drop Mermaid's max-width
+    clone.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+    clone.style.width = '95vw';
+    clone.style.height = '90vh';
+  } else {
+    clone.style.maxWidth = '95vw';
+    clone.style.maxHeight = '90vh';
+    clone.style.width = 'auto';
+    clone.style.height = 'auto';
+  }
+
+  content.replaceChildren(clone);
+  lb.classList.add('open');
+  lb.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+    function close() {
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      content.replaceChildren();
+    }
+
+    document.addEventListener('click', (e) => {
+      const target = e.target as Element;
+      if (lb.contains(target)) return;            // ignore clicks inside the overlay
+      const hit = target.closest(SELECTOR);       // <svg> or <img>
+      if (hit) open(hit);
+    });
+
+    closeBtn.addEventListener('click', close);
+    lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+  }
+</script>
+
+<style is:global>
+  .mermaid-diagram svg,
+  article img { cursor: zoom-in; }
+
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.92);
+    padding: 2rem;
+    cursor: zoom-out;
+  }
+  .lightbox.open { display: flex; }
+
+  .lightbox-content {
+    display: block;
+    line-height: 0;
+  }
+  .lightbox-content svg,
+  .lightbox-content img {
+    display: block;
+    border-radius: 6px;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  .lightbox-close:hover { opacity: 1; }
+</style>
